@@ -1,48 +1,22 @@
-<idea-plugin version="2">
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
+<idea-plugin version="1">
+  <id>ru.barashko.simplerefalplugin</id>
+  <name>Simple Refa Plugin</name>
   <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
-
-  <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
-    ]]></description>
-
-  <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
-    ]]>
-  </change-notes>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="141.0"/>
-
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
   <depends>com.intellij.modules.lang</depends>
-  -->
-
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
     <fileTypeFactory implementation="ru.barashko.simplerefalplugin.SimpleRefalFileTypeFactory"/>
     <lang.parserDefinition language="Simple Refal"
                            implementationClass="ru.barashko.simplerefalplugin.SimpleRefalParserDefinition"/>
-
     <lang.syntaxHighlighterFactory language="Simple Refal"
-            implementationClass="ru.barashko.simplerefalplugin.SimpleRefalSyntaxHighlighterFactory"/>
+                                   implementationClass="ru.barashko.simplerefalplugin.SimpleRefalSyntaxHighlighterFactory"/>
     <colorSettingsPage implementation="ru.barashko.simplerefalplugin.SimpleRefalColorSettingsPage"/>
-
     <completion.contributor language="Simple Refal"
                             implementationClass="ru.barashko.simplerefalplugin.SimpleRefalCompletionContributor"/>
-
-
-    <lang.braceMatcher language="Simple Refal" implementationClass="ru.barashko.simplerefalplugin.SimpleRefalBraceMatcher"/>
+    <lang.braceMatcher language="Simple Refal"
+                       implementationClass="ru.barashko.simplerefalplugin.SimpleRefalBraceMatcher"/>
   </extensions>
 
   <actions>
-    <!-- Add your actions here -->
   </actions>
 
 </idea-plugin>
