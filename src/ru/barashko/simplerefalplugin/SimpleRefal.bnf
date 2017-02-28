@@ -1,0 +1,40 @@
+{
+  parserClass="ru.barashko.simplerefalplugin.parser.SimpleRefalParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="SimpleRefal"
+  psiImplClassSuffix="Impl"
+  psiPackage="ru.barashko.simplerefalplugin.psi"
+  psiImplPackage="ru.barashko.simplerefalplugin.psi.impl"
+
+  elementTypeHolderClass="ru.barashko.simplerefalplugin.psi.SimpleRefalTypes"
+  elementTypeClass="ru.barashko.simplerefalplugin.psi.SimpleRefalElementType"
+  tokenTypeClass="ru.barashko.simplerefalplugin.psi.SimpleRefalTokenType"
+}
+
+program ::= programElement*
+programElement ::= externalDeclaration
+                | enumDefinition
+                | swapDefinition
+                | functionDefinition
+                | forwardDecration
+                | identifierDefinition
+                | SEMICOLON
+comment ::= MULTILINE_COMMENT | END_OF_LINE_COMMENT | MULTILINE_COMMENT2
+externalDeclaration ::= EXTERN nameList
+enumDefinition ::= (ENUM | EENUM) nameList
+swapDefinition ::= (SWAP | ESWAP) nameList
+functionDefinition ::= ENTRY? NAME block
+block ::= LBRACE sentence* RBRACE
+sentence ::= pattern EQUAL result SEMICOLON
+pattern ::= patternTerm*
+result ::= resultTerm*
+patternTerm ::= commonTerm | LPAREN pattern RPAREN | LBRACKET NAME pattern RPAREN | redefinitionVariable
+resultTerm ::= NAME DOUBLECOLON NAME | commonTerm |  LPAREN result RPAREN | LBRACKET NAME result RBRACKET | LCHEVRON result RCHEVRON | block
+commonTerm ::= VARIABLE | NAME | identifier | QUOTEDSTRING | INTEGER_LITERAL
+identifier ::= SHARP NAME
+redefinitionVariable ::= VARIABLE CARET
+forwardDecration ::= FORWARD nameList
+identifierDefinition ::= LABEL nameList
+nameList ::= NAME (COMMA NAME)* SEMICOLON
