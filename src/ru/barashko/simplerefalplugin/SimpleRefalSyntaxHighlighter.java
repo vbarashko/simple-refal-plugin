@@ -29,7 +29,7 @@ class SimpleRefalSyntaxHighlighter extends SyntaxHighlighterBase {
     static final TextAttributesKey SR_BLOCK_COMMENT = createTextAttributesKey("SIMPLE_REFAL_BLOCK_COMMENT", DefaultLanguageHighlighterColors.DOC_COMMENT_MARKUP);
     static final TextAttributesKey SR_NUMBER = createTextAttributesKey("SIMPLE_REFAL_NUMBER", DefaultLanguageHighlighterColors.NUMBER);
     static final TextAttributesKey SR_STRING = createTextAttributesKey("SIMPLE_REFAL_STRING", DefaultLanguageHighlighterColors.STRING);
-    static final TextAttributesKey SR_VARIABLE = createTextAttributesKey("SIMPLE_REFAL_VARIABLE", DefaultLanguageHighlighterColors.LOCAL_VARIABLE);
+    static final TextAttributesKey SR_VARIABLE = createTextAttributesKey("SIMPLE_REFAL_VARIABLE", DefaultLanguageHighlighterColors.INSTANCE_FIELD);
 
 
     static final TextAttributesKey[] EMPTY_KEYS = new TextAttributesKey[0];
