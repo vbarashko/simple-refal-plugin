@@ -20,18 +20,23 @@ programElement ::= externalDeclaration
                 | functionDefinition
                 | forwardDecration
                 | identifierDefinition
+                | cppInline
                 | SEMICOLON
-comment ::= MULTILINE_COMMENT | END_OF_LINE_COMMENT | MULTILINE_COMMENT2
-externalDeclaration ::= EXTERN nameList
-enumDefinition ::= (ENUM | EENUM) nameList
-swapDefinition ::= (SWAP | ESWAP) nameList
-functionDefinition ::= ENTRY? functionName block
-block ::= LBRACE sentence* RBRACE
-sentence ::= pattern EQUAL result SEMICOLON
+comment ::= MULTILINE_COMMENT | END_OF_LINE_COMMENT
+externalDeclaration ::= EXTERN nameList {pin=1}
+enumDefinition ::= (ENUM | EENUM) nameList {pin=1}
+swapDefinition ::= (SWAP | ESWAP) nameList {pin=1}
+functionDefinition ::= ENTRY? functionName block {pin=2}
+block ::= LBRACE (sentence | cppInline)* RBRACE {pin=1}
+private cppInline ::= CPP_INLINE
+sentence ::= pattern EQUAL result SEMICOLON {pin=2}
 pattern ::= patternTerm*
 result ::= resultTerm*
 patternTerm ::= redefinitionVariable | commonTerm | LPAREN pattern RPAREN | LBRACKET NAME pattern RPAREN
-resultTerm ::= commonTerm |  LPAREN result RPAREN | LBRACKET functionName result RBRACKET | LCHEVRON result RCHEVRON | block
+resultTerm ::= commonTerm |  parenResultTerm | bracketResultTerm | chevronResultTerm | block
+private parenResultTerm ::= LPAREN result RPAREN {pin=1}
+private chevronResultTerm ::= LCHEVRON result RCHEVRON {pin=1}
+private bracketResultTerm ::= LBRACKET functionName result RBRACKET {pin=1}
 commonTerm ::= var | functionName | identifier | QUOTEDSTRING | INTEGER_LITERAL
 identifier ::= SHARP NAME
 redefinitionVariable ::= VARIABLE CARET

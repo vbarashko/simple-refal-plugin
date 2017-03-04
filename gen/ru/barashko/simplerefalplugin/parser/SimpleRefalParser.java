@@ -94,40 +94,83 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // LBRACE sentence* RBRACE
+  // LBRACE (sentence | cppInline)* RBRACE
   public static boolean block(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block")) return false;
     if (!nextTokenIs(b, LBRACE)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
+    boolean r, p;
+    Marker m = enter_section_(b, l, _NONE_, BLOCK, null);
     r = consumeToken(b, LBRACE);
-    r = r && block_1(b, l + 1);
-    r = r && consumeToken(b, RBRACE);
-    exit_section_(b, m, BLOCK, r);
-    return r;
+    p = r; // pin = 1
+    r = r && report_error_(b, block_1(b, l + 1));
+    r = p && consumeToken(b, RBRACE) && r;
+    exit_section_(b, l, m, r, p, null);
+    return r || p;
   }
 
-  // sentence*
+  // (sentence | cppInline)*
   private static boolean block_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block_1")) return false;
     int c = current_position_(b);
     while (true) {
-      if (!sentence(b, l + 1)) break;
+      if (!block_1_0(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "block_1", c)) break;
       c = current_position_(b);
     }
     return true;
   }
 
+  // sentence | cppInline
+  private static boolean block_1_0(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "block_1_0")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = sentence(b, l + 1);
+    if (!r) r = cppInline(b, l + 1);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
   /* ********************************************************** */
-  // MULTILINE_COMMENT | END_OF_LINE_COMMENT | MULTILINE_COMMENT2
+  // LBRACKET functionName result RBRACKET
+  static boolean bracketResultTerm(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "bracketResultTerm")) return false;
+    if (!nextTokenIs(b, LBRACKET)) return false;
+    boolean r, p;
+    Marker m = enter_section_(b, l, _NONE_);
+    r = consumeToken(b, LBRACKET);
+    p = r; // pin = 1
+    r = r && report_error_(b, functionName(b, l + 1));
+    r = p && report_error_(b, result(b, l + 1)) && r;
+    r = p && consumeToken(b, RBRACKET) && r;
+    exit_section_(b, l, m, r, p, null);
+    return r || p;
+  }
+
+  /* ********************************************************** */
+  // LCHEVRON result RCHEVRON
+  static boolean chevronResultTerm(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "chevronResultTerm")) return false;
+    if (!nextTokenIs(b, LCHEVRON)) return false;
+    boolean r, p;
+    Marker m = enter_section_(b, l, _NONE_);
+    r = consumeToken(b, LCHEVRON);
+    p = r; // pin = 1
+    r = r && report_error_(b, result(b, l + 1));
+    r = p && consumeToken(b, RCHEVRON) && r;
+    exit_section_(b, l, m, r, p, null);
+    return r || p;
+  }
+
+  /* ********************************************************** */
+  // MULTILINE_COMMENT | END_OF_LINE_COMMENT
   public static boolean comment(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "comment")) return false;
+    if (!nextTokenIs(b, "<comment>", END_OF_LINE_COMMENT, MULTILINE_COMMENT)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, COMMENT, "<comment>");
     r = consumeToken(b, MULTILINE_COMMENT);
     if (!r) r = consumeToken(b, END_OF_LINE_COMMENT);
-    if (!r) r = consumeToken(b, MULTILINE_COMMENT2);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
@@ -148,16 +191,23 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
+  // CPP_INLINE
+  static boolean cppInline(PsiBuilder b, int l) {
+    return consumeToken(b, CPP_INLINE);
+  }
+
+  /* ********************************************************** */
   // (ENUM | EENUM) nameList
   public static boolean enumDefinition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "enumDefinition")) return false;
     if (!nextTokenIs(b, "<enum definition>", EENUM, ENUM)) return false;
-    boolean r;
+    boolean r, p;
     Marker m = enter_section_(b, l, _NONE_, ENUM_DEFINITION, "<enum definition>");
     r = enumDefinition_0(b, l + 1);
+    p = r; // pin = 1
     r = r && nameList(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
+    exit_section_(b, l, m, r, p, null);
+    return r || p;
   }
 
   // ENUM | EENUM
@@ -176,12 +226,13 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   public static boolean externalDeclaration(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "externalDeclaration")) return false;
     if (!nextTokenIs(b, EXTERN)) return false;
-    boolean r;
-    Marker m = enter_section_(b);
+    boolean r, p;
+    Marker m = enter_section_(b, l, _NONE_, EXTERNAL_DECLARATION, null);
     r = consumeToken(b, EXTERN);
+    p = r; // pin = 1
     r = r && nameList(b, l + 1);
-    exit_section_(b, m, EXTERNAL_DECLARATION, r);
-    return r;
+    exit_section_(b, l, m, r, p, null);
+    return r || p;
   }
 
   /* ********************************************************** */
@@ -202,13 +253,14 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   public static boolean functionDefinition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "functionDefinition")) return false;
     if (!nextTokenIs(b, "<function definition>", ENTRY, NAME)) return false;
-    boolean r;
+    boolean r, p;
     Marker m = enter_section_(b, l, _NONE_, FUNCTION_DEFINITION, "<function definition>");
     r = functionDefinition_0(b, l + 1);
     r = r && functionName(b, l + 1);
+    p = r; // pin = 2
     r = r && block(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
+    exit_section_(b, l, m, r, p, null);
+    return r || p;
   }
 
   // ENTRY?
@@ -292,6 +344,21 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
+  // LPAREN result RPAREN
+  static boolean parenResultTerm(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "parenResultTerm")) return false;
+    if (!nextTokenIs(b, LPAREN)) return false;
+    boolean r, p;
+    Marker m = enter_section_(b, l, _NONE_);
+    r = consumeToken(b, LPAREN);
+    p = r; // pin = 1
+    r = r && report_error_(b, result(b, l + 1));
+    r = p && consumeToken(b, RPAREN) && r;
+    exit_section_(b, l, m, r, p, null);
+    return r || p;
+  }
+
+  /* ********************************************************** */
   // patternTerm*
   public static boolean pattern(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "pattern")) return false;
@@ -364,6 +431,7 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   //                 | functionDefinition
   //                 | forwardDecration
   //                 | identifierDefinition
+  //                 | cppInline
   //                 | SEMICOLON
   public static boolean programElement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "programElement")) return false;
@@ -375,6 +443,7 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
     if (!r) r = functionDefinition(b, l + 1);
     if (!r) r = forwardDecration(b, l + 1);
     if (!r) r = identifierDefinition(b, l + 1);
+    if (!r) r = cppInline(b, l + 1);
     if (!r) r = consumeToken(b, SEMICOLON);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -408,54 +477,17 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // commonTerm |  LPAREN result RPAREN | LBRACKET functionName result RBRACKET | LCHEVRON result RCHEVRON | block
+  // commonTerm |  parenResultTerm | bracketResultTerm | chevronResultTerm | block
   public static boolean resultTerm(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "resultTerm")) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, RESULT_TERM, "<result term>");
     r = commonTerm(b, l + 1);
-    if (!r) r = resultTerm_1(b, l + 1);
-    if (!r) r = resultTerm_2(b, l + 1);
-    if (!r) r = resultTerm_3(b, l + 1);
+    if (!r) r = parenResultTerm(b, l + 1);
+    if (!r) r = bracketResultTerm(b, l + 1);
+    if (!r) r = chevronResultTerm(b, l + 1);
     if (!r) r = block(b, l + 1);
     exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // LPAREN result RPAREN
-  private static boolean resultTerm_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "resultTerm_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, LPAREN);
-    r = r && result(b, l + 1);
-    r = r && consumeToken(b, RPAREN);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // LBRACKET functionName result RBRACKET
-  private static boolean resultTerm_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "resultTerm_2")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, LBRACKET);
-    r = r && functionName(b, l + 1);
-    r = r && result(b, l + 1);
-    r = r && consumeToken(b, RBRACKET);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // LCHEVRON result RCHEVRON
-  private static boolean resultTerm_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "resultTerm_3")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, LCHEVRON);
-    r = r && result(b, l + 1);
-    r = r && consumeToken(b, RCHEVRON);
-    exit_section_(b, m, null, r);
     return r;
   }
 
@@ -463,14 +495,15 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   // pattern EQUAL result SEMICOLON
   public static boolean sentence(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "sentence")) return false;
-    boolean r;
+    boolean r, p;
     Marker m = enter_section_(b, l, _NONE_, SENTENCE, "<sentence>");
     r = pattern(b, l + 1);
     r = r && consumeToken(b, EQUAL);
-    r = r && result(b, l + 1);
-    r = r && consumeToken(b, SEMICOLON);
-    exit_section_(b, l, m, r, false, null);
-    return r;
+    p = r; // pin = 2
+    r = r && report_error_(b, result(b, l + 1));
+    r = p && consumeToken(b, SEMICOLON) && r;
+    exit_section_(b, l, m, r, p, null);
+    return r || p;
   }
 
   /* ********************************************************** */
@@ -478,12 +511,13 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   public static boolean swapDefinition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "swapDefinition")) return false;
     if (!nextTokenIs(b, "<swap definition>", ESWAP, SWAP)) return false;
-    boolean r;
+    boolean r, p;
     Marker m = enter_section_(b, l, _NONE_, SWAP_DEFINITION, "<swap definition>");
     r = swapDefinition_0(b, l + 1);
+    p = r; // pin = 1
     r = r && nameList(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
+    exit_section_(b, l, m, r, p, null);
+    return r || p;
   }
 
   // SWAP | ESWAP

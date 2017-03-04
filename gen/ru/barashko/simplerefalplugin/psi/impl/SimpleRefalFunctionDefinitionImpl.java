@@ -27,9 +27,9 @@ public class SimpleRefalFunctionDefinitionImpl extends ASTWrapperPsiElement impl
   }
 
   @Override
-  @NotNull
+  @Nullable
   public SimpleRefalBlock getBlock() {
-    return findNotNullChildByClass(SimpleRefalBlock.class);
+    return findChildByClass(SimpleRefalBlock.class);
   }
 
   @Override

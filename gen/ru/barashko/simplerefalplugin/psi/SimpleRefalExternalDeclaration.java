@@ -7,7 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public interface SimpleRefalExternalDeclaration extends PsiElement {
 
-  @NotNull
+  @Nullable
   SimpleRefalNameList getNameList();
 
 }

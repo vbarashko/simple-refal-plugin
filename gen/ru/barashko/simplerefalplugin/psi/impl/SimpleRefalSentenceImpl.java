@@ -33,9 +33,9 @@ public class SimpleRefalSentenceImpl extends ASTWrapperPsiElement implements Sim
   }
 
   @Override
-  @NotNull
+  @Nullable
   public SimpleRefalResult getResult() {
-    return findNotNullChildByClass(SimpleRefalResult.class);
+    return findChildByClass(SimpleRefalResult.class);
   }
 
 }

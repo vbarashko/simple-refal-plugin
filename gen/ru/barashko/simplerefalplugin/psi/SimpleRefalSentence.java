@@ -10,7 +10,7 @@ public interface SimpleRefalSentence extends PsiElement {
   @NotNull
   SimpleRefalPattern getPattern();
 
-  @NotNull
+  @Nullable
   SimpleRefalResult getResult();
 
 }

@@ -26,8 +26,8 @@ import org.jetbrains.annotations.Nullable;
 public class SimpleRefalBraceMatcher implements PairedBraceMatcher {
     private static final BracePair[] PAIRS = new BracePair[] {
             new BracePair(SimpleRefalTypes.LBRACE, SimpleRefalTypes.RBRACE, true),
-            new BracePair(SimpleRefalTypes.LBRACKET, SimpleRefalTypes.RBRACKET, true),
             new BracePair(SimpleRefalTypes.LCHEVRON, SimpleRefalTypes.RCHEVRON, true),
+            new BracePair(SimpleRefalTypes.LBRACKET, SimpleRefalTypes.RBRACKET, true),
             new BracePair(SimpleRefalTypes.LPAREN, SimpleRefalTypes.RPAREN, true)
 
     };

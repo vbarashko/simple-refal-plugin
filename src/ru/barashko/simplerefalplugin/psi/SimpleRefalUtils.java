@@ -38,63 +38,55 @@ public class SimpleRefalUtils {
     public static String[] getAvailableFunctionNames(PsiElement parameters) {
         PsiElement top = parameters;
 
-        System.out.println(top.getText());
-        System.out.println(top.toString());
-
         List<String> lFunctionNames = new ArrayList<>();
         while (!top.toString().equals("SimpleRefalProgramElementImpl(PROGRAM_ELEMENT)")) {
             top = top.getParent();
         }
 
-        PsiElement sibling = top.getNextSibling();
-        while (sibling != null) {
-            if (sibling.toString().equals("SimpleRefalProgramElementImpl(PROGRAM_ELEMENT)")
-                    && sibling.getChildren().length > 0) {
-                PsiElement functionDefinition = sibling.getFirstChild();
+        PsiElement parent = top.getParent();
+        for (PsiElement programElement : parent.getChildren()) {
+            if (programElement.toString().equals("SimpleRefalProgramElementImpl(PROGRAM_ELEMENT)")
+                    && programElement.getChildren().length > 0) {
+                PsiElement functionDefinition = programElement.getFirstChild();
                 if (functionDefinition.toString()
                         .equals("SimpleRefalFunctionDefinitionImpl(FUNCTION_DEFINITION)")) {
                     PsiElement[] functionDefinitionChildren = functionDefinition.getChildren();
                     for (PsiElement child : functionDefinitionChildren) {
-                        if (child.toString().equals("SimpleRefalFuncNameImpl(FUNC_NAME)")) {
+                        if (child.toString().equals("SimpleRefalFunctionNameImpl(FUNCTION_NAME)")) {
                             lFunctionNames.add(child.getText());
                             break;
                         }
                     }
                 }
             }
-            sibling = sibling.getNextSibling();
         }
 
-        while (top.getParent() != null) {
+        while (top.getParent() != null && !top.toString().equals("Simple Refal File"))
             top = top.getParent();
-        }
 
         Set<String> FUNC_CONTAINERS = new HashSet<>();
         FUNC_CONTAINERS.add("SimpleRefalExternalDeclarationImpl(EXTERNAL_DECLARATION)");
         FUNC_CONTAINERS.add("SimpleRefalEnumDefinitionImpl(ENUM_DEFINITION)");
         FUNC_CONTAINERS.add("SimpleRefalSwapDefinitionImpl(SWAP_DEFINITION)");
+        FUNC_CONTAINERS.add("SimpleRefalSwapDefinitionImpl(SWAP_DEFINITION)");
 
-        for (PsiElement child : top.getChildren()) {
-            if (child.getChildren().length > 0
-                    && FUNC_CONTAINERS.contains(child.getFirstChild().toString())) {
-                PsiElement nameList = child.getFirstChild().getLastChild();
-                PsiElement name = nameList.getFirstChild();
-                System.out.println(name.getText());
-                while (name != null) {
-                    if (name.toString().equals("PsiElement(SimpleRefalTokenType.NAME)")) {
-                        lFunctionNames.add(name.getText());
+        for (PsiElement programElement : top.getChildren()) {
+            if (programElement.getChildren().length > 0) {
+                if (FUNC_CONTAINERS.contains(programElement.getFirstChild().toString())) {
+                    PsiElement nameList = programElement.getFirstChild().getLastChild();
+                    PsiElement name = nameList.getFirstChild();
+                    while (name != null) {
+                        if (name.toString().equals("PsiElement(SimpleRefalTokenType.NAME)")) {
+                            lFunctionNames.add(name.getText());
+                        }
+
+                        name = name.getNextSibling();
                     }
-
-                    name = name.getNextSibling();
                 }
             }
         }
 
-
         String[] aFunctionNames = new String[lFunctionNames.size()];
-
-        System.out.println(Arrays.toString(aFunctionNames));
-
         return lFunctionNames.toArray(aFunctionNames);
     }
 }

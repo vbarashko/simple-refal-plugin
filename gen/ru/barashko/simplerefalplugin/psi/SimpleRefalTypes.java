@@ -31,6 +31,7 @@ public interface SimpleRefalTypes {
 
   IElementType CARET = new SimpleRefalTokenType("CARET");
   IElementType COMMA = new SimpleRefalTokenType("COMMA");
+  IElementType CPP_INLINE = new SimpleRefalTokenType("CPP_INLINE");
   IElementType EENUM = new SimpleRefalTokenType("EENUM");
   IElementType END_OF_LINE_COMMENT = new SimpleRefalTokenType("END_OF_LINE_COMMENT");
   IElementType ENTRY = new SimpleRefalTokenType("ENTRY");
@@ -46,7 +47,6 @@ public interface SimpleRefalTypes {
   IElementType LCHEVRON = new SimpleRefalTokenType("LCHEVRON");
   IElementType LPAREN = new SimpleRefalTokenType("LPAREN");
   IElementType MULTILINE_COMMENT = new SimpleRefalTokenType("MULTILINE_COMMENT");
-  IElementType MULTILINE_COMMENT2 = new SimpleRefalTokenType("MULTILINE_COMMENT2");
   IElementType NAME = new SimpleRefalTokenType("NAME");
   IElementType QUOTEDSTRING = new SimpleRefalTokenType("QUOTEDSTRING");
   IElementType RBRACE = new SimpleRefalTokenType("RBRACE");

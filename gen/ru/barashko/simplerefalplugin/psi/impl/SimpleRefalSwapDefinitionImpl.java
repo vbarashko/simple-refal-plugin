@@ -27,9 +27,9 @@ public class SimpleRefalSwapDefinitionImpl extends ASTWrapperPsiElement implemen
   }
 
   @Override
-  @NotNull
+  @Nullable
   public SimpleRefalNameList getNameList() {
-    return findNotNullChildByClass(SimpleRefalNameList.class);
+    return findChildByClass(SimpleRefalNameList.class);
   }
 
 }

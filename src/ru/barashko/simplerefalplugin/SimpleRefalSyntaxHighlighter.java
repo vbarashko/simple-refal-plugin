@@ -26,7 +26,7 @@ class SimpleRefalSyntaxHighlighter extends SyntaxHighlighterBase {
     static final TextAttributesKey SR_COMMA = createTextAttributesKey("SIMPLE_REFAL_COMMA", COMMA);
     static final TextAttributesKey SR_FUNCTION_NAME = createTextAttributesKey("SIMPLE_REFAL_FUNCTION_NAME", FUNCTION_DECLARATION);
     static final TextAttributesKey SR_LINE_COMMENT = createTextAttributesKey("SIMPLE_REFAL_LINE_COMMENT", DefaultLanguageHighlighterColors.LINE_COMMENT);
-    static final TextAttributesKey SR_BLOCK_COMMENT = createTextAttributesKey("SIMPLE_REFAL_BLOCK_COMMENT", DefaultLanguageHighlighterColors.DOC_COMMENT_MARKUP);
+    static final TextAttributesKey SR_BLOCK_COMMENT = createTextAttributesKey("SIMPLE_REFAL_BLOCK_COMMENT", DefaultLanguageHighlighterColors.BLOCK_COMMENT);
     static final TextAttributesKey SR_NUMBER = createTextAttributesKey("SIMPLE_REFAL_NUMBER", DefaultLanguageHighlighterColors.NUMBER);
     static final TextAttributesKey SR_STRING = createTextAttributesKey("SIMPLE_REFAL_STRING", DefaultLanguageHighlighterColors.STRING);
     static final TextAttributesKey SR_VARIABLE = createTextAttributesKey("SIMPLE_REFAL_VARIABLE", DefaultLanguageHighlighterColors.INSTANCE_FIELD);
@@ -56,7 +56,7 @@ class SimpleRefalSyntaxHighlighter extends SyntaxHighlighterBase {
     @NotNull
     @Override
     public TextAttributesKey[] getTokenHighlights(IElementType type) {
-        if (type.equals(SimpleRefalTypes.MULTILINE_COMMENT) || type.equals(SimpleRefalTypes.MULTILINE_COMMENT2)) {
+        if (type.equals(SimpleRefalTypes.MULTILINE_COMMENT)) {
             return pack(SR_BLOCK_COMMENT);
         }
         if (type.equals(SimpleRefalTypes.END_OF_LINE_COMMENT)) {

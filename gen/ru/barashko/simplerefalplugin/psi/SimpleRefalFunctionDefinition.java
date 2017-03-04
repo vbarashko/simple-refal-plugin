@@ -7,7 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public interface SimpleRefalFunctionDefinition extends PsiElement {
 
-  @NotNull
+  @Nullable
   SimpleRefalBlock getBlock();
 
   @NotNull

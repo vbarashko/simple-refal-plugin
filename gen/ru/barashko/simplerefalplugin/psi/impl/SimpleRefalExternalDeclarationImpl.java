@@ -27,9 +27,9 @@ public class SimpleRefalExternalDeclarationImpl extends ASTWrapperPsiElement imp
   }
 
   @Override
-  @NotNull
+  @Nullable
   public SimpleRefalNameList getNameList() {
-    return findNotNullChildByClass(SimpleRefalNameList.class);
+    return findChildByClass(SimpleRefalNameList.class);
   }
 
 }
