@@ -25,7 +25,6 @@ MULTILINE_COMMENT=(("/*"|"/**")[^"*"]{COMMENT_TAIL})|"/*"
 COMMENT_TAIL=([^"*"]*("*"+[^"*""/"])?)*("*"+"/")?
 END_OF_LINE_COMMENT="/""/"[^\r\n]*
 
-
 CPP_INLINE=(\n)?"%%"\n.*\n"%%"\n
 
 STRING_LITERAL=\'([^\\\'\r\n]|{ESCAPE_SEQUENCE})*\'

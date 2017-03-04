@@ -12,7 +12,7 @@ public class SimpleRefalTokenType extends IElementType {
     }
 
     public static TokenSet getCommentSet() {
-        return TokenSet.create(SimpleRefalTypes.MULTILINE_COMMENT,
+        return TokenSet.create(SimpleRefalTypes.CPP_INLINE, SimpleRefalTypes.MULTILINE_COMMENT,
                 SimpleRefalTypes.END_OF_LINE_COMMENT);
     }
 

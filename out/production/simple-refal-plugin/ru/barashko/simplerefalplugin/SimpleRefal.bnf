@@ -20,15 +20,13 @@ programElement ::= externalDeclaration
                 | functionDefinition
                 | forwardDecration
                 | identifierDefinition
-                | cppInline
                 | SEMICOLON
-comment ::= MULTILINE_COMMENT | END_OF_LINE_COMMENT
+comment ::= CPP_INLINE | MULTILINE_COMMENT | END_OF_LINE_COMMENT
 externalDeclaration ::= EXTERN nameList {pin=1}
 enumDefinition ::= (ENUM | EENUM) nameList {pin=1}
 swapDefinition ::= (SWAP | ESWAP) nameList {pin=1}
 functionDefinition ::= ENTRY? functionName block {pin=2}
-block ::= LBRACE (sentence | cppInline)* RBRACE {pin=1}
-private cppInline ::= CPP_INLINE
+block ::= LBRACE sentence* RBRACE {pin=1}
 sentence ::= pattern EQUAL result SEMICOLON {pin=2}
 pattern ::= patternTerm*
 result ::= resultTerm*

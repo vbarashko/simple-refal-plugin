@@ -94,7 +94,7 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // LBRACE (sentence | cppInline)* RBRACE
+  // LBRACE sentence* RBRACE
   public static boolean block(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block")) return false;
     if (!nextTokenIs(b, LBRACE)) return false;
@@ -108,27 +108,16 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
     return r || p;
   }
 
-  // (sentence | cppInline)*
+  // sentence*
   private static boolean block_1(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "block_1")) return false;
     int c = current_position_(b);
     while (true) {
-      if (!block_1_0(b, l + 1)) break;
+      if (!sentence(b, l + 1)) break;
       if (!empty_element_parsed_guard_(b, "block_1", c)) break;
       c = current_position_(b);
     }
     return true;
-  }
-
-  // sentence | cppInline
-  private static boolean block_1_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "block_1_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = sentence(b, l + 1);
-    if (!r) r = cppInline(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
   }
 
   /* ********************************************************** */
@@ -163,13 +152,13 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // MULTILINE_COMMENT | END_OF_LINE_COMMENT
+  // CPP_INLINE | MULTILINE_COMMENT | END_OF_LINE_COMMENT
   public static boolean comment(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "comment")) return false;
-    if (!nextTokenIs(b, "<comment>", END_OF_LINE_COMMENT, MULTILINE_COMMENT)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, COMMENT, "<comment>");
-    r = consumeToken(b, MULTILINE_COMMENT);
+    r = consumeToken(b, CPP_INLINE);
+    if (!r) r = consumeToken(b, MULTILINE_COMMENT);
     if (!r) r = consumeToken(b, END_OF_LINE_COMMENT);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -188,12 +177,6 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
     if (!r) r = consumeToken(b, INTEGER_LITERAL);
     exit_section_(b, l, m, r, false, null);
     return r;
-  }
-
-  /* ********************************************************** */
-  // CPP_INLINE
-  static boolean cppInline(PsiBuilder b, int l) {
-    return consumeToken(b, CPP_INLINE);
   }
 
   /* ********************************************************** */
@@ -431,7 +414,6 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   //                 | functionDefinition
   //                 | forwardDecration
   //                 | identifierDefinition
-  //                 | cppInline
   //                 | SEMICOLON
   public static boolean programElement(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "programElement")) return false;
@@ -443,7 +425,6 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
     if (!r) r = functionDefinition(b, l + 1);
     if (!r) r = forwardDecration(b, l + 1);
     if (!r) r = identifierDefinition(b, l + 1);
-    if (!r) r = cppInline(b, l + 1);
     if (!r) r = consumeToken(b, SEMICOLON);
     exit_section_(b, l, m, r, false, null);
     return r;
