@@ -19,5 +19,20 @@ public class SimpleRefalAnnotator implements Annotator {
                 holder.createErrorAnnotation(range, "Unresolved variable");
             }
         }
+
+        if (element.toString().equals("PsiElement(SimpleRefalTokenType.NAME)") &&
+                element.getParent().toString().equals("SimpleRefalFunctionNameImpl(FUNCTION_NAME)") &&
+                !element.getParent().getParent().toString().equals("SimpleRefalFunctionDefinitionImpl(FUNCTION_DEFINITION)")) {
+            String[] functionNames = SimpleRefalUtils.getAvailableFunctionNames(element);
+//            System.out.println("==" + element.getText());
+//            System.out.println(Arrays.toString(functionNames));
+
+            if (!Arrays.asList(functionNames).contains(element.getText())) {
+                TextRange range = new TextRange(element.getTextRange().getStartOffset(),
+                        element.getTextRange().getEndOffset());
+                holder.createErrorAnnotation(range, "Unresolved function");
+            }
+
+        }
     }
 }
