@@ -7,6 +7,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.util.ProcessingContext;
 import org.jetbrains.annotations.NotNull;
 import ru.barashko.simplerefalplugin.psi.SimpleRefalTypes;
+import ru.barashko.simplerefalplugin.psi.SimpleRefalUtils;
 
 import java.util.*;
 
@@ -18,19 +19,10 @@ public class SimpleRefalCompletionContributor extends CompletionContributor {
                     public void addCompletions(@NotNull CompletionParameters parameters,
                                                ProcessingContext context,
                                                @NotNull CompletionResultSet resultSet) {
-                        PsiElement top = parameters.getPosition().getParent();
-                        List<PsiElement> lVariables = new ArrayList<>();
-                        while (top.getParent() != null) {
-                            if (top.toString().equals("SimpleRefalSentenceImpl(SENTENCE)")) {
-                                PsiElement pattern = top.getFirstChild();
-                                PsiElement[] tempVariables = getChildVariables(pattern);
-                                Collections.addAll(lVariables, tempVariables);
-                            }
-                            top = top.getParent();
-                        }
-                        if (lVariables.size() > 0) {
-                            for (PsiElement var : lVariables) {
-                                resultSet.addElement(LookupElementBuilder.create(var.getText()));
+                        String[] variables = SimpleRefalUtils.getPatternVariables(parameters.getPosition().getParent());
+                        if (variables.length > 0) {
+                            for (String var : variables) {
+                                resultSet.addElement(LookupElementBuilder.create(var));
                             }
                         }
                     }
@@ -98,19 +90,4 @@ public class SimpleRefalCompletionContributor extends CompletionContributor {
     }
 
 
-
-    private PsiElement[] getChildVariables(PsiElement top) {
-        PsiElement[] aChildren = top.getChildren();
-        List<PsiElement> lChildVariables = new ArrayList<>();
-        for (PsiElement child : aChildren) {
-            if (child.toString().equals("SimpleRefalVarImpl(VAR)")) {
-                lChildVariables.add(child);
-            } else if (child.getChildren().length > 0) {
-                PsiElement[] result = getChildVariables(child);
-                Collections.addAll(lChildVariables, result);
-            }
-        }
-        PsiElement[] aChildVariables = new PsiElement[lChildVariables.size()];
-        return lChildVariables.toArray(aChildVariables);
-    }
 }

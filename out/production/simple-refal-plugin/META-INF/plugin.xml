@@ -14,6 +14,8 @@
                             implementationClass="ru.barashko.simplerefalplugin.SimpleRefalCompletionContributor"/>
     <lang.braceMatcher language="Simple Refal"
                        implementationClass="ru.barashko.simplerefalplugin.SimpleRefalBraceMatcher"/>
+    <annotator language="Simple Refal"
+                       implementationClass="ru.barashko.simplerefalplugin.SimpleRefalAnnotator"/>
   </extensions>
 
   <actions>
