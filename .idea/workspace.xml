@@ -46,37 +46,10 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/gen/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalSentenceImpl.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/gen/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalSwapDefinitionImpl.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/gen/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalVarImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalNamedElement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalNamedElement.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalAnnotator.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalAnnotator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalBraceMatcher.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalBraceMatcher.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalLexer.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalLexer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalParserDefinition.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalParserDefinition.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalSyntaxHighlighter.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalSyntaxHighlighter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/parser/SimpleRefalParser.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/parser/SimpleRefalParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalEnumDefinition.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalEnumDefinition.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalExternalDeclaration.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalExternalDeclaration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalFunctionDefinition.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalFunctionDefinition.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalSentence.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalSentence.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalSwapDefinition.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalSwapDefinition.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalTokenType.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalTokenType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalTypes.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalTypes.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalEnumDefinitionImpl.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalEnumDefinitionImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalExternalDeclarationImpl.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalExternalDeclarationImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalFunctionDefinitionImpl.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalFunctionDefinitionImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalSentenceImpl.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalSentenceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalSwapDefinitionImpl.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalSwapDefinitionImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefal.bnf" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefal.bnf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.bnf" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.bnf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.flex" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.flex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalAnnotator.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalAnnotator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalBraceMatcher.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalBraceMatcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalParserDefinition.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalParserDefinition.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalSyntaxHighlighter.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalSyntaxHighlighter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalTokenType.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalTokenType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.java" />
     </list>
     <ignored path="simple-refal-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,8 +73,8 @@
       <file leaf-file-name="SimpleRefal.flex" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.flex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+            <state relative-caret-position="180">
+              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -252,8 +225,8 @@
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalSyntaxHighlighter.java" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalTokenType.java" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.bnf" />
-        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.flex" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.java" />
+        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.flex" />
       </list>
     </option>
   </component>
@@ -635,7 +608,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -648,7 +621,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3503876" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2942899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2942899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1046,16 +1019,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.bnf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#530#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1066,10 +1029,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.bnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#530#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.flex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        <state relative-caret-position="180">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding />
         </state>
       </provider>

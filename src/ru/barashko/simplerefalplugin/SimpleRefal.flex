@@ -21,14 +21,14 @@ FIRST_NAME_CHAR=[A-Z]
 NAME_CHAR=[a-zA-Z_\-0-9]
 VARIABLE_TYPE = "s"|"t"|"e"
 
-MULTILINE_COMMENT=("/*"[^"*"]{COMMENT_TAIL})|"/*"
+MULTILINE_COMMENT=(("/*"|"/**")[^"*"]{COMMENT_TAIL})|"/*"
 COMMENT_TAIL=([^"*"]*("*"+[^"*""/"])?)*("*"+"/")?
 END_OF_LINE_COMMENT="/""/"[^\r\n]*
 
 
 CPP_INLINE=(\n)?"%%"\n.*\n"%%"\n
 
-STRING_LITERAL=\'([^\\\'\r\n]|{ESCAPE_SEQUENCE}|\')*\'
+STRING_LITERAL=\'([^\\\'\r\n]|{ESCAPE_SEQUENCE})*\'
 ESCAPE_SEQUENCE=\\[^\r\n]
 
 DIGIT=[0-9]
