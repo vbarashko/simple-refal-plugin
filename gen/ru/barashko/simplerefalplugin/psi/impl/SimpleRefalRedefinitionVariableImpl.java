@@ -26,10 +26,4 @@ public class SimpleRefalRedefinitionVariableImpl extends ASTWrapperPsiElement im
     else super.accept(visitor);
   }
 
-  @Override
-  @NotNull
-  public SimpleRefalVar getVar() {
-    return findNotNullChildByClass(SimpleRefalVar.class);
-  }
-
 }

@@ -44,6 +44,9 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
     else if (t == FUNCTION_DEFINITION) {
       r = functionDefinition(b, 0);
     }
+    else if (t == FUNCTION_NAME) {
+      r = functionName(b, 0);
+    }
     else if (t == IDENTIFIER) {
       r = identifier(b, 0);
     }
@@ -130,13 +133,13 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // var | NAME | identifier | QUOTEDSTRING | INTEGER_LITERAL
+  // var | functionName | identifier | QUOTEDSTRING | INTEGER_LITERAL
   public static boolean commonTerm(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "commonTerm")) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, COMMON_TERM, "<common term>");
     r = var(b, l + 1);
-    if (!r) r = consumeToken(b, NAME);
+    if (!r) r = functionName(b, l + 1);
     if (!r) r = identifier(b, l + 1);
     if (!r) r = consumeToken(b, QUOTEDSTRING);
     if (!r) r = consumeToken(b, INTEGER_LITERAL);
@@ -195,14 +198,14 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // ENTRY? NAME block
+  // ENTRY? functionName block
   public static boolean functionDefinition(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "functionDefinition")) return false;
     if (!nextTokenIs(b, "<function definition>", ENTRY, NAME)) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, FUNCTION_DEFINITION, "<function definition>");
     r = functionDefinition_0(b, l + 1);
-    r = r && consumeToken(b, NAME);
+    r = r && functionName(b, l + 1);
     r = r && block(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
@@ -213,6 +216,18 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
     if (!recursion_guard_(b, l, "functionDefinition_0")) return false;
     consumeToken(b, ENTRY);
     return true;
+  }
+
+  /* ********************************************************** */
+  // NAME
+  public static boolean functionName(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "functionName")) return false;
+    if (!nextTokenIs(b, NAME)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, NAME);
+    exit_section_(b, m, FUNCTION_NAME, r);
+    return r;
   }
 
   /* ********************************************************** */
@@ -292,22 +307,22 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // commonTerm | LPAREN pattern RPAREN | LBRACKET NAME pattern RPAREN | redefinitionVariable
+  // redefinitionVariable | commonTerm | LPAREN pattern RPAREN | LBRACKET NAME pattern RPAREN
   public static boolean patternTerm(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "patternTerm")) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, PATTERN_TERM, "<pattern term>");
-    r = commonTerm(b, l + 1);
-    if (!r) r = patternTerm_1(b, l + 1);
+    r = redefinitionVariable(b, l + 1);
+    if (!r) r = commonTerm(b, l + 1);
     if (!r) r = patternTerm_2(b, l + 1);
-    if (!r) r = redefinitionVariable(b, l + 1);
+    if (!r) r = patternTerm_3(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
   // LPAREN pattern RPAREN
-  private static boolean patternTerm_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "patternTerm_1")) return false;
+  private static boolean patternTerm_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "patternTerm_2")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, LPAREN);
@@ -318,8 +333,8 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   // LBRACKET NAME pattern RPAREN
-  private static boolean patternTerm_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "patternTerm_2")) return false;
+  private static boolean patternTerm_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "patternTerm_3")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeTokens(b, 0, LBRACKET, NAME);
@@ -366,14 +381,13 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // var CARET
+  // VARIABLE CARET
   public static boolean redefinitionVariable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "redefinitionVariable")) return false;
     if (!nextTokenIs(b, VARIABLE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = var(b, l + 1);
-    r = r && consumeToken(b, CARET);
+    r = consumeTokens(b, 0, VARIABLE, CARET);
     exit_section_(b, m, REDEFINITION_VARIABLE, r);
     return r;
   }
@@ -394,24 +408,23 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // NAME DOUBLECOLON NAME | commonTerm |  LPAREN result RPAREN | LBRACKET NAME result RBRACKET | LCHEVRON result RCHEVRON | block
+  // commonTerm |  LPAREN result RPAREN | LBRACKET functionName result RBRACKET | LCHEVRON result RCHEVRON | block
   public static boolean resultTerm(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "resultTerm")) return false;
     boolean r;
     Marker m = enter_section_(b, l, _NONE_, RESULT_TERM, "<result term>");
-    r = parseTokens(b, 0, NAME, DOUBLECOLON, NAME);
-    if (!r) r = commonTerm(b, l + 1);
+    r = commonTerm(b, l + 1);
+    if (!r) r = resultTerm_1(b, l + 1);
     if (!r) r = resultTerm_2(b, l + 1);
     if (!r) r = resultTerm_3(b, l + 1);
-    if (!r) r = resultTerm_4(b, l + 1);
     if (!r) r = block(b, l + 1);
     exit_section_(b, l, m, r, false, null);
     return r;
   }
 
   // LPAREN result RPAREN
-  private static boolean resultTerm_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "resultTerm_2")) return false;
+  private static boolean resultTerm_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "resultTerm_1")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, LPAREN);
@@ -421,12 +434,13 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
     return r;
   }
 
-  // LBRACKET NAME result RBRACKET
-  private static boolean resultTerm_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "resultTerm_3")) return false;
+  // LBRACKET functionName result RBRACKET
+  private static boolean resultTerm_2(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "resultTerm_2")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, LBRACKET, NAME);
+    r = consumeToken(b, LBRACKET);
+    r = r && functionName(b, l + 1);
     r = r && result(b, l + 1);
     r = r && consumeToken(b, RBRACKET);
     exit_section_(b, m, null, r);
@@ -434,8 +448,8 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   // LCHEVRON result RCHEVRON
-  private static boolean resultTerm_4(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "resultTerm_4")) return false;
+  private static boolean resultTerm_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "resultTerm_3")) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = consumeToken(b, LCHEVRON);

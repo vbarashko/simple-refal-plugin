@@ -8,6 +8,9 @@ import com.intellij.psi.PsiElement;
 public interface SimpleRefalCommonTerm extends PsiElement {
 
   @Nullable
+  SimpleRefalFunctionName getFunctionName();
+
+  @Nullable
   SimpleRefalIdentifier getIdentifier();
 
   @Nullable

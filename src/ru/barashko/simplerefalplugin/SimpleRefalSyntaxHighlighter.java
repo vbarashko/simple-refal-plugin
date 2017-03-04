@@ -34,7 +34,7 @@ class SimpleRefalSyntaxHighlighter extends SyntaxHighlighterBase {
 
     static final TextAttributesKey[] EMPTY_KEYS = new TextAttributesKey[0];
 
-    public static Set<IElementType> KEYWORD_ELEMENTS = new HashSet<IElementType>();
+    public static Set<IElementType> KEYWORD_ELEMENTS = new HashSet<>();
     static {
         KEYWORD_ELEMENTS.add(SimpleRefalTypes.EXTERN);
         KEYWORD_ELEMENTS.add(SimpleRefalTypes.ENUM);
@@ -56,10 +56,10 @@ class SimpleRefalSyntaxHighlighter extends SyntaxHighlighterBase {
     @NotNull
     @Override
     public TextAttributesKey[] getTokenHighlights(IElementType type) {
-        if (type == SimpleRefalTypes.MULTILINE_COMMENT || type == SimpleRefalTypes.MULTILINE_COMMENT2) {
+        if (type.equals(SimpleRefalTypes.MULTILINE_COMMENT) || type.equals(SimpleRefalTypes.MULTILINE_COMMENT2)) {
             return pack(SR_BLOCK_COMMENT);
         }
-        if (type == SimpleRefalTypes.END_OF_LINE_COMMENT) {
+        if (type.equals(SimpleRefalTypes.END_OF_LINE_COMMENT)) {
             return pack(SR_LINE_COMMENT);
         }
         if (type.equals(SimpleRefalTypes.NAME)) {

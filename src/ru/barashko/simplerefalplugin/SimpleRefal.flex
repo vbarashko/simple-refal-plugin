@@ -60,7 +60,6 @@ INTEGER_LITERAL={DECIMAL_INTEGER_LITERAL}
     ">" { return SimpleRefalTypes.RCHEVRON; }
     "=" { return SimpleRefalTypes.EQUAL; }
     "^" { return SimpleRefalTypes.CARET; }
-    "::" { return SimpleRefalTypes.DOUBLECOLON; }
 
     {VARIABLE_TYPE}"."{NAME_CHAR}+  { return SimpleRefalTypes.VARIABLE; }
     {FIRST_NAME_CHAR}{NAME_CHAR}*       { yybegin(YYINITIAL); return SimpleRefalTypes.NAME; }

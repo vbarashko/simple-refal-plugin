@@ -11,37 +11,19 @@ import static ru.barashko.simplerefalplugin.psi.SimpleRefalTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import ru.barashko.simplerefalplugin.psi.*;
 
-public class SimpleRefalCommonTermImpl extends ASTWrapperPsiElement implements SimpleRefalCommonTerm {
+public class SimpleRefalFunctionNameImpl extends ASTWrapperPsiElement implements SimpleRefalFunctionName {
 
-  public SimpleRefalCommonTermImpl(ASTNode node) {
+  public SimpleRefalFunctionNameImpl(ASTNode node) {
     super(node);
   }
 
   public void accept(@NotNull SimpleRefalVisitor visitor) {
-    visitor.visitCommonTerm(this);
+    visitor.visitFunctionName(this);
   }
 
   public void accept(@NotNull PsiElementVisitor visitor) {
     if (visitor instanceof SimpleRefalVisitor) accept((SimpleRefalVisitor)visitor);
     else super.accept(visitor);
-  }
-
-  @Override
-  @Nullable
-  public SimpleRefalFunctionName getFunctionName() {
-    return findChildByClass(SimpleRefalFunctionName.class);
-  }
-
-  @Override
-  @Nullable
-  public SimpleRefalIdentifier getIdentifier() {
-    return findChildByClass(SimpleRefalIdentifier.class);
-  }
-
-  @Override
-  @Nullable
-  public SimpleRefalVar getVar() {
-    return findChildByClass(SimpleRefalVar.class);
   }
 
 }

@@ -35,6 +35,10 @@ public class SimpleRefalVisitor extends PsiElementVisitor {
     visitPsiElement(o);
   }
 
+  public void visitFunctionName(@NotNull SimpleRefalFunctionName o) {
+    visitPsiElement(o);
+  }
+
   public void visitIdentifier(@NotNull SimpleRefalIdentifier o) {
     visitPsiElement(o);
   }

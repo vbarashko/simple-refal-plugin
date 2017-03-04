@@ -10,4 +10,7 @@ public interface SimpleRefalFunctionDefinition extends PsiElement {
   @NotNull
   SimpleRefalBlock getBlock();
 
+  @NotNull
+  SimpleRefalFunctionName getFunctionName();
+
 }

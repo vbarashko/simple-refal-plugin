@@ -40,6 +40,12 @@ public class SimpleRefalResultTermImpl extends ASTWrapperPsiElement implements S
 
   @Override
   @Nullable
+  public SimpleRefalFunctionName getFunctionName() {
+    return findChildByClass(SimpleRefalFunctionName.class);
+  }
+
+  @Override
+  @Nullable
   public SimpleRefalResult getResult() {
     return findChildByClass(SimpleRefalResult.class);
   }

@@ -32,4 +32,10 @@ public class SimpleRefalFunctionDefinitionImpl extends ASTWrapperPsiElement impl
     return findNotNullChildByClass(SimpleRefalBlock.class);
   }
 
+  @Override
+  @NotNull
+  public SimpleRefalFunctionName getFunctionName() {
+    return findNotNullChildByClass(SimpleRefalFunctionName.class);
+  }
+
 }

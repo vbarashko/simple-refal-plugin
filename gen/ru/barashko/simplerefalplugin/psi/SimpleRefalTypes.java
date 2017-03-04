@@ -15,6 +15,7 @@ public interface SimpleRefalTypes {
   IElementType EXTERNAL_DECLARATION = new SimpleRefalElementType("EXTERNAL_DECLARATION");
   IElementType FORWARD_DECRATION = new SimpleRefalElementType("FORWARD_DECRATION");
   IElementType FUNCTION_DEFINITION = new SimpleRefalElementType("FUNCTION_DEFINITION");
+  IElementType FUNCTION_NAME = new SimpleRefalElementType("FUNCTION_NAME");
   IElementType IDENTIFIER = new SimpleRefalElementType("IDENTIFIER");
   IElementType IDENTIFIER_DEFINITION = new SimpleRefalElementType("IDENTIFIER_DEFINITION");
   IElementType NAME_LIST = new SimpleRefalElementType("NAME_LIST");
@@ -30,7 +31,6 @@ public interface SimpleRefalTypes {
 
   IElementType CARET = new SimpleRefalTokenType("CARET");
   IElementType COMMA = new SimpleRefalTokenType("COMMA");
-  IElementType DOUBLECOLON = new SimpleRefalTokenType("DOUBLECOLON");
   IElementType EENUM = new SimpleRefalTokenType("EENUM");
   IElementType END_OF_LINE_COMMENT = new SimpleRefalTokenType("END_OF_LINE_COMMENT");
   IElementType ENTRY = new SimpleRefalTokenType("ENTRY");
@@ -81,6 +81,9 @@ public interface SimpleRefalTypes {
       }
       else if (type == FUNCTION_DEFINITION) {
         return new SimpleRefalFunctionDefinitionImpl(node);
+      }
+      else if (type == FUNCTION_NAME) {
+        return new SimpleRefalFunctionNameImpl(node);
       }
       else if (type == IDENTIFIER) {
         return new SimpleRefalIdentifierImpl(node);

@@ -53,11 +53,11 @@ class SimpleRefalLexer implements FlexLexer {
 
   /* The ZZ_CMAP_A table has 320 entries */
   static final char ZZ_CMAP_A[] = zzUnpackCMap(
-    "\11\0\1\2\1\1\1\56\1\2\1\1\22\0\1\2\2\0\1\40\1\16\1\10\1\0\1\13\1\44\1\45"+
-    "\1\7\1\0\1\41\1\4\1\55\1\6\2\15\1\12\7\15\1\54\1\42\1\50\1\52\1\51\2\0\1\30"+
+    "\11\0\1\2\1\1\1\55\1\2\1\1\22\0\1\2\2\0\1\40\1\16\1\10\1\0\1\13\1\44\1\45"+
+    "\1\7\1\0\1\41\1\4\1\54\1\6\2\15\1\12\7\15\1\0\1\42\1\50\1\52\1\51\2\0\1\30"+
     "\1\34\1\3\1\37\1\17\1\35\5\3\1\33\1\25\1\23\1\36\1\31\1\3\1\22\1\26\1\21\1"+
     "\24\1\3\1\27\1\20\1\32\1\3\1\46\1\14\1\47\1\53\1\4\1\0\4\4\1\5\15\4\2\5\6"+
-    "\4\1\43\1\0\1\11\7\0\1\56\242\0\2\56\26\0");
+    "\4\1\43\1\0\1\11\7\0\1\55\242\0\2\55\26\0");
 
   /** 
    * Translates DFA states to action switch labels.
@@ -67,13 +67,13 @@ class SimpleRefalLexer implements FlexLexer {
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\3\3\1\1\4\1\5\2\1"+
     "\1\6\1\7\1\10\1\11\1\12\1\13\1\14\1\15"+
-    "\1\16\1\17\1\20\1\21\1\1\1\0\1\22\1\23"+
-    "\2\0\1\24\5\0\1\25\1\26\1\23\11\0\1\27"+
-    "\10\0\1\23\3\0\1\30\1\0\1\31\2\0\1\32"+
-    "\1\0\1\33\1\34\1\35\1\0\1\36\1\0\1\37";
+    "\1\16\1\17\1\20\1\21\1\0\1\22\1\23\2\0"+
+    "\1\24\5\0\1\25\1\23\11\0\1\26\10\0\1\23"+
+    "\3\0\1\27\1\0\1\30\2\0\1\31\1\0\1\32"+
+    "\1\33\1\34\1\0\1\35\1\0\1\36";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[74];
+    int [] result = new int[72];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -98,19 +98,18 @@ class SimpleRefalLexer implements FlexLexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\57\0\136\0\215\0\274\0\353\0\u011a\0\57"+
-    "\0\u0149\0\u0178\0\u01a7\0\57\0\57\0\57\0\57\0\57"+
-    "\0\57\0\57\0\57\0\57\0\57\0\57\0\57\0\u01d6"+
-    "\0\u0205\0\u0234\0\u0263\0\u0292\0\u0178\0\u0178\0\u02c1\0\u02f0"+
-    "\0\u031f\0\u034e\0\u037d\0\57\0\u0205\0\u03ac\0\u03db\0\u040a"+
-    "\0\u0439\0\u0468\0\u0497\0\u04c6\0\u04f5\0\u0524\0\u0553\0\57"+
-    "\0\u0582\0\u05b1\0\u05e0\0\u060f\0\u063e\0\u066d\0\u069c\0\u06cb"+
-    "\0\57\0\u06fa\0\u0729\0\u0758\0\57\0\u0787\0\57\0\u07b6"+
-    "\0\u07e5\0\57\0\u0814\0\57\0\57\0\57\0\u0843\0\57"+
-    "\0\u0872\0\57";
+    "\0\0\0\56\0\134\0\212\0\270\0\346\0\u0114\0\56"+
+    "\0\u0142\0\u0170\0\u019e\0\56\0\56\0\56\0\56\0\56"+
+    "\0\56\0\56\0\56\0\56\0\56\0\56\0\56\0\u01cc"+
+    "\0\u01fa\0\u0228\0\u0256\0\u0170\0\u0170\0\u0284\0\u02b2\0\u02e0"+
+    "\0\u030e\0\u033c\0\u01cc\0\u036a\0\u0398\0\u03c6\0\u03f4\0\u0422"+
+    "\0\u0450\0\u047e\0\u04ac\0\u04da\0\u0508\0\56\0\u0536\0\u0564"+
+    "\0\u0592\0\u05c0\0\u05ee\0\u061c\0\u064a\0\u0678\0\56\0\u06a6"+
+    "\0\u06d4\0\u0702\0\56\0\u0730\0\56\0\u075e\0\u078c\0\56"+
+    "\0\u07ba\0\56\0\56\0\56\0\u07e8\0\56\0\u0816\0\56";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[74];
+    int [] result = new int[72];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -136,27 +135,27 @@ class SimpleRefalLexer implements FlexLexer {
     "\1\2\2\3\1\4\1\2\1\5\1\6\1\2\1\7"+
     "\1\10\1\11\1\12\1\2\1\11\1\13\21\4\1\14"+
     "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24"+
-    "\1\25\1\26\1\27\1\30\1\2\61\0\2\3\57\0"+
-    "\3\4\4\0\1\4\2\0\1\4\1\0\21\4\74\0"+
-    "\1\31\7\0\1\32\1\33\57\0\1\34\60\0\1\11"+
-    "\2\0\1\11\41\0\1\35\1\0\11\35\1\36\1\37"+
-    "\42\35\17\0\1\40\6\0\1\41\4\0\1\42\1\0"+
-    "\1\43\75\0\1\44\5\0\3\45\4\0\1\45\2\0"+
-    "\1\45\1\0\21\45\17\0\1\32\1\0\55\32\7\46"+
-    "\1\0\47\46\10\34\1\47\2\0\30\34\1\0\13\34"+
-    "\1\35\1\0\55\35\17\0\1\50\1\51\2\0\1\52"+
-    "\2\0\1\53\57\0\1\54\57\0\1\55\64\0\1\56"+
-    "\20\0\7\46\1\57\47\46\10\0\1\60\71\0\1\61"+
-    "\54\0\1\62\56\0\1\63\2\0\1\64\61\0\1\65"+
-    "\57\0\1\66\62\0\1\67\44\0\1\70\34\0\6\46"+
-    "\1\71\1\57\47\46\24\0\1\72\51\0\1\73\61\0"+
-    "\1\74\61\0\1\75\61\0\1\76\57\0\1\77\44\0"+
-    "\1\100\66\0\1\101\54\0\1\102\53\0\1\103\66\0"+
-    "\1\104\55\0\1\105\60\0\1\106\53\0\1\107\51\0"+
-    "\1\110\55\0\1\111\73\0\1\112\17\0";
+    "\1\25\1\26\1\27\1\2\60\0\2\3\56\0\3\4"+
+    "\4\0\1\4\2\0\1\4\1\0\21\4\72\0\1\30"+
+    "\7\0\1\31\1\32\56\0\1\33\57\0\1\11\2\0"+
+    "\1\11\40\0\1\34\1\0\11\34\1\35\1\36\41\34"+
+    "\17\0\1\37\6\0\1\40\4\0\1\41\1\0\1\42"+
+    "\23\0\3\43\4\0\1\43\2\0\1\43\1\0\21\43"+
+    "\16\0\1\31\1\0\54\31\7\44\1\0\46\44\10\33"+
+    "\1\45\2\0\30\33\1\0\12\33\1\34\1\0\54\34"+
+    "\17\0\1\46\1\47\2\0\1\50\2\0\1\51\56\0"+
+    "\1\52\56\0\1\53\63\0\1\54\17\0\7\44\1\55"+
+    "\46\44\10\0\1\56\70\0\1\57\53\0\1\60\55\0"+
+    "\1\61\2\0\1\62\60\0\1\63\56\0\1\64\61\0"+
+    "\1\65\43\0\1\66\33\0\6\44\1\67\1\55\46\44"+
+    "\24\0\1\70\50\0\1\71\60\0\1\72\60\0\1\73"+
+    "\60\0\1\74\56\0\1\75\43\0\1\76\65\0\1\77"+
+    "\53\0\1\100\52\0\1\101\65\0\1\102\54\0\1\103"+
+    "\57\0\1\104\52\0\1\105\50\0\1\106\54\0\1\107"+
+    "\72\0\1\110\16\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[2209];
+    int [] result = new int[2116];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -194,13 +193,13 @@ class SimpleRefalLexer implements FlexLexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\5\1\1\11\3\1\14\11\1\1\1\0"+
-    "\2\1\2\0\1\1\5\0\1\11\2\1\11\0\1\11"+
-    "\10\0\1\11\3\0\1\11\1\0\1\11\2\0\1\11"+
-    "\1\0\3\11\1\0\1\11\1\0\1\11";
+    "\1\0\1\11\5\1\1\11\3\1\14\11\1\0\2\1"+
+    "\2\0\1\1\5\0\2\1\11\0\1\11\10\0\1\11"+
+    "\3\0\1\11\1\0\1\11\2\0\1\11\1\0\3\11"+
+    "\1\0\1\11\1\0\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[74];
+    int [] result = new int[72];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -516,127 +515,123 @@ class SimpleRefalLexer implements FlexLexer {
           case 1: 
             { return TokenType.BAD_CHARACTER;
             }
-          case 32: break;
+          case 31: break;
           case 2: 
             { yybegin(YYINITIAL); return TokenType.WHITE_SPACE;
             }
-          case 33: break;
+          case 32: break;
           case 3: 
             { yybegin(YYINITIAL); return SimpleRefalTypes.NAME;
             }
-          case 34: break;
+          case 33: break;
           case 4: 
             { return SimpleRefalTypes.RBRACE;
             }
-          case 35: break;
+          case 34: break;
           case 5: 
             { yybegin(YYINITIAL);  return SimpleRefalTypes.INTEGER_LITERAL;
             }
-          case 36: break;
+          case 35: break;
           case 6: 
             { return SimpleRefalTypes.SHARP;
             }
-          case 37: break;
+          case 36: break;
           case 7: 
             { return SimpleRefalTypes.COMMA;
             }
-          case 38: break;
+          case 37: break;
           case 8: 
             { return SimpleRefalTypes.SEMICOLON;
             }
-          case 39: break;
+          case 38: break;
           case 9: 
             { return SimpleRefalTypes.LBRACE;
             }
-          case 40: break;
+          case 39: break;
           case 10: 
             { return SimpleRefalTypes.LPAREN;
             }
-          case 41: break;
+          case 40: break;
           case 11: 
             { return SimpleRefalTypes.RPAREN;
             }
-          case 42: break;
+          case 41: break;
           case 12: 
             { return SimpleRefalTypes.LBRACKET;
             }
-          case 43: break;
+          case 42: break;
           case 13: 
             { return SimpleRefalTypes.RBRACKET;
             }
-          case 44: break;
+          case 43: break;
           case 14: 
             { return SimpleRefalTypes.LCHEVRON;
             }
-          case 45: break;
+          case 44: break;
           case 15: 
             { return SimpleRefalTypes.RCHEVRON;
             }
-          case 46: break;
+          case 45: break;
           case 16: 
             { return SimpleRefalTypes.EQUAL;
             }
-          case 47: break;
+          case 46: break;
           case 17: 
             { return SimpleRefalTypes.CARET;
             }
-          case 48: break;
+          case 47: break;
           case 18: 
             { return SimpleRefalTypes.END_OF_LINE_COMMENT;
             }
-          case 49: break;
+          case 48: break;
           case 19: 
             { return SimpleRefalTypes.MULTILINE_COMMENT;
             }
-          case 50: break;
+          case 49: break;
           case 20: 
             { yybegin(YYINITIAL);  return SimpleRefalTypes.QUOTEDSTRING;
             }
-          case 51: break;
+          case 50: break;
           case 21: 
-            { return SimpleRefalTypes.DOUBLECOLON;
-            }
-          case 52: break;
-          case 22: 
             { return SimpleRefalTypes.VARIABLE;
             }
-          case 53: break;
-          case 23: 
+          case 51: break;
+          case 22: 
             { return SimpleRefalTypes.MULTILINE_COMMENT2;
             }
-          case 54: break;
-          case 24: 
+          case 52: break;
+          case 23: 
             { yybegin(YYINITIAL); return SimpleRefalTypes.ENUM;
             }
-          case 55: break;
-          case 25: 
+          case 53: break;
+          case 24: 
             { yybegin(YYINITIAL); return SimpleRefalTypes.SWAP;
             }
-          case 56: break;
-          case 26: 
+          case 54: break;
+          case 25: 
             { yybegin(YYINITIAL); return SimpleRefalTypes.EENUM;
             }
-          case 57: break;
-          case 27: 
+          case 55: break;
+          case 26: 
             { yybegin(YYINITIAL); return SimpleRefalTypes.ENTRY;
             }
-          case 58: break;
-          case 28: 
+          case 56: break;
+          case 27: 
             { yybegin(YYINITIAL); return SimpleRefalTypes.ESWAP;
             }
-          case 59: break;
-          case 29: 
+          case 57: break;
+          case 28: 
             { yybegin(YYINITIAL); return SimpleRefalTypes.LABEL;
             }
-          case 60: break;
-          case 30: 
+          case 58: break;
+          case 29: 
             { yybegin(YYINITIAL); return SimpleRefalTypes.EXTERN;
             }
-          case 61: break;
-          case 31: 
+          case 59: break;
+          case 30: 
             { yybegin(YYINITIAL); return SimpleRefalTypes.FORWARD;
             }
-          case 62: break;
+          case 60: break;
           default:
             zzScanError(ZZ_NO_MATCH);
           }

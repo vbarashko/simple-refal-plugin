@@ -14,6 +14,9 @@ public interface SimpleRefalResultTerm extends PsiElement {
   SimpleRefalCommonTerm getCommonTerm();
 
   @Nullable
+  SimpleRefalFunctionName getFunctionName();
+
+  @Nullable
   SimpleRefalResult getResult();
 
 }
