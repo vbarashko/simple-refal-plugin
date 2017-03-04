@@ -25,7 +25,7 @@ MULTILINE_COMMENT=(("/*"|"/**")[^"*"]{COMMENT_TAIL})|"/*"
 COMMENT_TAIL=([^"*"]*("*"+[^"*""/"])?)*("*"+"/")?
 END_OF_LINE_COMMENT="/""/"[^\r\n]*
 
-CPP_INLINE=(\n)?"%%"\n.*\n"%%"\n
+CPP_INLINE_DELIMETER="%%"
 
 STRING_LITERAL=\'([^\\\'\r\n]|{ESCAPE_SEQUENCE})*\'
 ESCAPE_SEQUENCE=\\[^\r\n]
@@ -33,9 +33,20 @@ ESCAPE_SEQUENCE=\\[^\r\n]
 DIGIT=[0-9]
 DECIMAL_INTEGER_LITERAL={DIGIT}+
 INTEGER_LITERAL={DECIMAL_INTEGER_LITERAL}
+
+%state CPP_INLINE
+
 %%
 
+<CPP_INLINE> {
+    \n{CPP_INLINE_DELIMETER}\n    { yybegin(YYINITIAL); return SimpleRefalTypes.CPP_INLINE; }
+
+    [^] { yybegin(CPP_INLINE); }
+}
+
 <YYINITIAL> {
+
+    {CPP_INLINE_DELIMETER}\n        { yybegin(CPP_INLINE); }
 
     "$EXTERN"       { return SimpleRefalTypes.EXTERN; }
     "$ENUM"         { return SimpleRefalTypes.ENUM; }
@@ -63,19 +74,14 @@ INTEGER_LITERAL={DECIMAL_INTEGER_LITERAL}
     {VARIABLE_TYPE}"."{NAME_CHAR}+      { return SimpleRefalTypes.VARIABLE; }
     {FIRST_NAME_CHAR}{NAME_CHAR}*       { return SimpleRefalTypes.NAME; }
 
-
-
     {STRING_LITERAL}       { return SimpleRefalTypes.QUOTEDSTRING; }
     {INTEGER_LITERAL}      { return SimpleRefalTypes.INTEGER_LITERAL; }
-
-
-    {CPP_INLINE}  { return SimpleRefalTypes.CPP_INLINE; }
 
     {MULTILINE_COMMENT}  { return SimpleRefalTypes.MULTILINE_COMMENT; }
     {END_OF_LINE_COMMENT}  { return SimpleRefalTypes.END_OF_LINE_COMMENT; }
 
 
-    ({CRLF}|{WHITE_SPACE})+ { yybegin(YYINITIAL); return TokenType.WHITE_SPACE; }
+    ({CRLF}|{WHITE_SPACE})+ { return TokenType.WHITE_SPACE; }
 
 
     .                       { yybegin(YYINITIAL); return TokenType.BAD_CHARACTER; }

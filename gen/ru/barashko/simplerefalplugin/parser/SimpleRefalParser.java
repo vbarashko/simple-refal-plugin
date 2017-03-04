@@ -152,7 +152,9 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // CPP_INLINE | MULTILINE_COMMENT | END_OF_LINE_COMMENT
+  // CPP_INLINE
+  //             | MULTILINE_COMMENT
+  //             | END_OF_LINE_COMMENT
   public static boolean comment(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "comment")) return false;
     boolean r;
@@ -165,7 +167,11 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // var | functionName | identifier | QUOTEDSTRING | INTEGER_LITERAL
+  // var
+  //                 | functionName
+  //                 | identifier
+  //                 | QUOTEDSTRING
+  //                 | INTEGER_LITERAL
   public static boolean commonTerm(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "commonTerm")) return false;
     boolean r;
@@ -357,7 +363,10 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // redefinitionVariable | commonTerm | LPAREN pattern RPAREN | LBRACKET NAME pattern RPAREN
+  // redefinitionVariable
+  //                 | commonTerm
+  //                 | LPAREN pattern RPAREN
+  //                 | LBRACKET NAME pattern RPAREN
   public static boolean patternTerm(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "patternTerm")) return false;
     boolean r;
@@ -458,7 +467,11 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // commonTerm |  parenResultTerm | bracketResultTerm | chevronResultTerm | block
+  // commonTerm
+  //                 |  parenResultTerm
+  //                 | bracketResultTerm
+  //                 | chevronResultTerm
+  //                 | block
   public static boolean resultTerm(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "resultTerm")) return false;
     boolean r;
