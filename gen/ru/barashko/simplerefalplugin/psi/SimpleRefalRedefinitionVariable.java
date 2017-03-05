@@ -7,4 +7,7 @@ import com.intellij.psi.PsiElement;
 
 public interface SimpleRefalRedefinitionVariable extends PsiElement {
 
+  @NotNull
+  SimpleRefalVar getVar();
+
 }

@@ -37,7 +37,7 @@ patternTerm ::= redefinitionVariable
                 | LPAREN pattern RPAREN
                 | LBRACKET NAME pattern RPAREN
 resultTerm ::= commonTerm
-                |  parenResultTerm
+                | parenResultTerm
                 | bracketResultTerm
                 | chevronResultTerm
                 | block
@@ -50,7 +50,7 @@ commonTerm ::= var
                 | QUOTEDSTRING
                 | INTEGER_LITERAL
 identifier ::= SHARP NAME
-redefinitionVariable ::= VARIABLE CARET
+redefinitionVariable ::= var CARET
 functionName ::= NAME
 var ::= VARIABLE
 forwardDecration ::= FORWARD nameList

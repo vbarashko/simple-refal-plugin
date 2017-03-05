@@ -16,7 +16,10 @@ public class SimpleRefalCompletionContributor extends CompletionContributor {
                     public void addCompletions(@NotNull CompletionParameters parameters,
                                                ProcessingContext context,
                                                @NotNull CompletionResultSet resultSet) {
-                        String[] variables = SimpleRefalUtils.getPatternVariables(parameters.getPosition().getParent());
+                        if (SimpleRefalUtils.isPatternVariable(parameters.getPosition().getParent()))
+                            return;
+
+                        String[] variables = SimpleRefalUtils.getPatternVariables(parameters.getPosition().getParent(), true);
                         if (variables.length > 0) {
                             for (String var : variables) {
                                 resultSet.addElement(LookupElementBuilder.create(var));

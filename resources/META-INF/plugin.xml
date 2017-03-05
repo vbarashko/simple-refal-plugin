@@ -16,6 +16,7 @@
                        implementationClass="ru.barashko.simplerefalplugin.SimpleRefalBraceMatcher"/>
     <annotator language="Simple Refal"
                        implementationClass="ru.barashko.simplerefalplugin.SimpleRefalAnnotator"/>
+    <lang.commenter language="Simple Refal" implementationClass="ru.barashko.simplerefalplugin.SimpleRefalCommenter"/>
   </extensions>
 
   <actions>

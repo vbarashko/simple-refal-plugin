@@ -40,7 +40,6 @@ INTEGER_LITERAL={DECIMAL_INTEGER_LITERAL}
 
 <CPP_INLINE> {
     \n{CPP_INLINE_DELIMETER}\n    { yybegin(YYINITIAL); return SimpleRefalTypes.CPP_INLINE; }
-
     [^] { yybegin(CPP_INLINE); }
 }
 

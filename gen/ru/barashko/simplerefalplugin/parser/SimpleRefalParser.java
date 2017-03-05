@@ -440,13 +440,14 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // VARIABLE CARET
+  // var CARET
   public static boolean redefinitionVariable(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "redefinitionVariable")) return false;
     if (!nextTokenIs(b, VARIABLE)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, VARIABLE, CARET);
+    r = var(b, l + 1);
+    r = r && consumeToken(b, CARET);
     exit_section_(b, m, REDEFINITION_VARIABLE, r);
     return r;
   }
@@ -468,7 +469,7 @@ public class SimpleRefalParser implements PsiParser, LightPsiParser {
 
   /* ********************************************************** */
   // commonTerm
-  //                 |  parenResultTerm
+  //                 | parenResultTerm
   //                 | bracketResultTerm
   //                 | chevronResultTerm
   //                 | block

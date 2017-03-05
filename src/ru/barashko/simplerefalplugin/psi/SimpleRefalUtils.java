@@ -5,14 +5,22 @@ import com.intellij.psi.PsiElement;
 import java.util.*;
 
 public class SimpleRefalUtils {
-    public static String[] getPatternVariables(PsiElement parameter) {
+    public static String[] getPatternVariables(PsiElement parameter, boolean includePredecessorPattern) {
         PsiElement top = parameter;
         List<String> lVariables = new ArrayList<>();
+        boolean isMoreThenPredecessor = includePredecessorPattern;
+
+        if (parameter.getText().equals("e.NextFile"))
+            System.out.println(parameter.getText());
+
         while (top.getParent() != null) {
-            if (top.toString().equals("SimpleRefalSentenceImpl(SENTENCE)")) {
-                PsiElement pattern = top.getFirstChild();
-                String[] tempVariables = getPatternVariablesRec(pattern);
-                Collections.addAll(lVariables, tempVariables);
+            if (top.getParent().toString().equals("SimpleRefalSentenceImpl(SENTENCE)")) {
+                boolean isPattern = top.toString().equals("SimpleRefalPatternImpl(PATTERN)");
+                if (!isPattern || isMoreThenPredecessor) {
+                    String[] tempVariables = getPatternVariablesRec(top.getParent().getFirstChild());
+                    Collections.addAll(lVariables, tempVariables);
+                    isMoreThenPredecessor = true;
+                }
             }
             top = top.getParent();
         }
@@ -88,5 +96,32 @@ public class SimpleRefalUtils {
 
         String[] aFunctionNames = new String[lFunctionNames.size()];
         return lFunctionNames.toArray(aFunctionNames);
+    }
+
+    public static boolean isPatternVariable(PsiElement element) {
+        PsiElement top = element;
+        if (!element.toString().equals("SimpleRefalVarImpl(VAR)"))
+            return false;
+
+        while (top.getParent() != null) {
+            if (top.toString().equals("SimpleRefalPatternImpl(PATTERN)"))
+                return true;
+
+            if (top.toString().equals("SimpleRefalResultImpl(RESULT)")) {
+                return false;
+            }
+            top = top.getParent();
+        }
+        return false;
+    }
+
+    public static boolean isRedefinitonVariable(PsiElement element) {
+        if (!element.toString().equals("SimpleRefalVarImpl(VAR)"))
+            return false;
+
+        if (element.getParent().toString().equals("SimpleRefalRedefinitionVariableImpl(REDEFINITION_VARIABLE)"))
+            return true;
+
+        return false;
     }
 }
