@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a938a150-c475-4542-89ae-37727a780c0a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalCommenter.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalCommenter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simple-refal-plugin.jar" afterPath="$PROJECT_DIR$/simple-refal-plugin.jar" />
     </list>
     <ignored path="simple-refal-plugin.iws" />
     <ignored path=".idea/workspace.xml" />
