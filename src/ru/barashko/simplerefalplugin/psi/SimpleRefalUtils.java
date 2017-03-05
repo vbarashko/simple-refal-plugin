@@ -10,9 +10,6 @@ public class SimpleRefalUtils {
         List<String> lVariables = new ArrayList<>();
         boolean isMoreThenPredecessor = includePredecessorPattern;
 
-        if (parameter.getText().equals("e.NextFile"))
-            System.out.println(parameter.getText());
-
         while (top.getParent() != null) {
             if (top.getParent().toString().equals("SimpleRefalSentenceImpl(SENTENCE)")) {
                 boolean isPattern = top.toString().equals("SimpleRefalPatternImpl(PATTERN)");
@@ -123,5 +120,15 @@ public class SimpleRefalUtils {
             return true;
 
         return false;
+    }
+
+    public static boolean egg(PsiElement element) {
+        String name = element.getText();
+        Set<String> ELEMENTS = new HashSet<>();
+        ELEMENTS.add("vovan");
+        ELEMENTS.add("vavan");
+        ELEMENTS.add("wavan");
+        ELEMENTS.add("wa1");
+        return ELEMENTS.contains(name.substring(2));
     }
 }

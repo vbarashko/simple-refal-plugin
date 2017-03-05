@@ -25,20 +25,20 @@ public class SimpleRefalAnnotator implements Annotator {
                 if (!isRedefinitionVariable) {
                     TextRange range = new TextRange(element.getTextRange().getStartOffset(),
                             element.getTextRange().getEndOffset());
-                    holder.createWarningAnnotation(range, "Variable is already defined");
+                    holder.createWeakWarningAnnotation(range, "Variable is already defined");
                 }
             }
-
+            if (SimpleRefalUtils.egg(element)) {
+                TextRange range = new TextRange(element.getTextRange().getStartOffset(),
+                        element.getTextRange().getEndOffset());
+                holder.createWarningAnnotation(range, "wa1 Was Here");
+            }
 
         }
 
         if (element.toString().equals("PsiElement(SimpleRefalTokenType.NAME)") &&
                 element.getParent().toString().equals("SimpleRefalFunctionNameImpl(FUNCTION_NAME)")) {
-            if (element.getParent().getParent().toString().equals("SimpleRefalFunctionDefinitionImpl(FUNCTION_DEFINITION)")) {
-                TextRange range = new TextRange(element.getTextRange().getStartOffset(),
-                        element.getTextRange().getEndOffset());
-                holder.createInfoAnnotation(range, null).setTextAttributes(SimpleRefalSyntaxHighlighter.SR_FUNCTION_NAME);
-            } else {
+            if (!element.getParent().getParent().toString().equals("SimpleRefalFunctionDefinitionImpl(FUNCTION_DEFINITION)")) {
                 String[] functionNames = SimpleRefalUtils.getAvailableFunctionNames(element);
 
                 if (!Arrays.asList(functionNames).contains(element.getText())) {
