@@ -2,9 +2,6 @@ package ru.barashko.simplerefalplugin;
 
 import com.intellij.lang.Commenter;
 
-/**
- * @author max
- */
 public class SimpleRefalCommenter implements Commenter {
     public String getLineCommentPrefix() {
         return "//";
