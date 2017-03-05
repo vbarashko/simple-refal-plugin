@@ -1,7 +1,10 @@
 <idea-plugin version="1">
   <id>ru.barashko.simplerefalplugin</id>
-  <name>Simple Refa Plugin</name>
+  <name>Simple Refal Plugin</name>
   <version>1.0</version>
+  <description>
+    Supports the development Simple Refal applications with Intellij IDEA.
+  </description>
   <depends>com.intellij.modules.lang</depends>
   <extensions defaultExtensionNs="com.intellij">
     <fileTypeFactory implementation="ru.barashko.simplerefalplugin.SimpleRefalFileTypeFactory"/>
