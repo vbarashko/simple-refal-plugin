@@ -4,9 +4,12 @@ import com.intellij.codeInsight.completion.*;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
 import com.intellij.patterns.PlatformPatterns;
 import com.intellij.util.ProcessingContext;
+import org.apache.commons.lang.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
 import ru.barashko.simplerefalplugin.psi.SimpleRefalTypes;
 import ru.barashko.simplerefalplugin.psi.SimpleRefalUtils;
+
+import java.util.Arrays;
 
 public class SimpleRefalCompletionContributor extends CompletionContributor {
     public SimpleRefalCompletionContributor() {
@@ -16,12 +19,14 @@ public class SimpleRefalCompletionContributor extends CompletionContributor {
                     public void addCompletions(@NotNull CompletionParameters parameters,
                                                ProcessingContext context,
                                                @NotNull CompletionResultSet resultSet) {
-                        if (SimpleRefalUtils.isPatternVariable(parameters.getPosition().getParent()))
-                            return;
+                        String[] predecessorPatternVariables = SimpleRefalUtils.getPredecessorPatternVariables(parameters.getPosition().getParent(), true);
+                        String[] siblingPatternVariables = SimpleRefalUtils.getSiblingPatternVariables(parameters.getPosition().getParent());
+                        String[] potentials = (String[]) ArrayUtils.addAll(predecessorPatternVariables, siblingPatternVariables);
 
-                        String[] variables = SimpleRefalUtils.getPatternVariables(parameters.getPosition().getParent(), true);
-                        if (variables.length > 0) {
-                            for (String var : variables) {
+                        System.out.println(Arrays.toString(potentials));
+
+                        if (potentials.length > 0) {
+                            for (String var : potentials) {
                                 resultSet.addElement(LookupElementBuilder.create(var));
                             }
                         }

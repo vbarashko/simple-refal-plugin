@@ -5,18 +5,18 @@ import com.intellij.psi.PsiElement;
 import java.util.*;
 
 public class SimpleRefalUtils {
-    public static String[] getPatternVariables(PsiElement parameter, boolean includePredecessorPattern) {
-        PsiElement top = parameter;
+    public static String[] getPredecessorPatternVariables(PsiElement element, boolean includePredecessorPattern) {
+        PsiElement top = element;
         List<String> lVariables = new ArrayList<>();
-        boolean isMoreThenPredecessor = includePredecessorPattern;
+        boolean isMoreThanPredecessor = includePredecessorPattern;
 
         while (top.getParent() != null) {
-            if (top.getParent().toString().equals("SimpleRefalSentenceImpl(SENTENCE)")) {
+            if (isSentence(top.getParent())) {
                 boolean isPattern = top.toString().equals("SimpleRefalPatternImpl(PATTERN)");
-                if (!isPattern || isMoreThenPredecessor) {
-                    String[] tempVariables = getPatternVariablesRec(top.getParent().getFirstChild());
+                if (!isPattern || isMoreThanPredecessor) {
+                    String[] tempVariables = getVariablesRec(top.getParent().getFirstChild());
                     Collections.addAll(lVariables, tempVariables);
-                    isMoreThenPredecessor = true;
+                    isMoreThanPredecessor = true;
                 }
             }
             top = top.getParent();
@@ -25,19 +25,46 @@ public class SimpleRefalUtils {
         return lVariables.toArray(aVariables);
     }
 
-    private static String[] getPatternVariablesRec(PsiElement top) {
+    private static String[] getVariablesRec(PsiElement top) {
         PsiElement[] aChildren = top.getChildren();
         List<String> lChildVariables = new ArrayList<>();
         for (PsiElement child : aChildren) {
             if (child.toString().equals("SimpleRefalVarImpl(VAR)")) {
                 lChildVariables.add(child.getText());
             } else if (child.getChildren().length > 0) {
-                String[] result = getPatternVariablesRec(child);
+                String[] result = getVariablesRec(child);
                 Collections.addAll(lChildVariables, result);
             }
         }
         String[] aChildVariables = new String[lChildVariables.size()];
         return lChildVariables.toArray(aChildVariables);
+    }
+
+
+
+    public static String[] getSiblingPatternVariables(PsiElement element) {
+        PsiElement top = element;
+        List<String> lVariables = new ArrayList<>();
+        while (top != null) {
+            if (isSentence(top)) {
+                break;
+            }
+            top = top.getParent();
+        }
+
+        if (top == null)
+            return null;
+
+        for (PsiElement sentence : top.getParent().getChildren()) {
+            if (isSentence(sentence)) {
+                PsiElement pattern = sentence.getFirstChild();
+                String[] tempVariables = getVariablesRec(pattern);
+                Collections.addAll(lVariables, tempVariables);
+            }
+        }
+
+        String[] aVariables = new String[lVariables.size()];
+        return lVariables.toArray(aVariables);
     }
 
     public static String[] getAvailableFunctionNames(PsiElement parameters) {
@@ -130,5 +157,9 @@ public class SimpleRefalUtils {
         ELEMENTS.add("wavan");
         ELEMENTS.add("wa1");
         return ELEMENTS.contains(name.substring(2));
+    }
+
+    private static boolean isSentence(PsiElement element) {
+        return element.toString().equals("SimpleRefalSentenceImpl(SENTENCE)");
     }
 }

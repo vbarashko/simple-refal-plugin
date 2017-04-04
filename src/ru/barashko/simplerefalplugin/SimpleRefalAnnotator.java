@@ -12,7 +12,7 @@ public class SimpleRefalAnnotator implements Annotator {
     @Override
     public void annotate(@NotNull final PsiElement element, @NotNull AnnotationHolder holder) {
         if (element.toString().equals("SimpleRefalVarImpl(VAR)")) {
-            String[] potentialVariables = SimpleRefalUtils.getPatternVariables(element, false);
+            String[] potentialVariables = SimpleRefalUtils.getPredecessorPatternVariables(element, false);
             boolean isPatternVariable = SimpleRefalUtils.isPatternVariable(element);
             boolean isInPotentialVariables = Arrays.asList(potentialVariables).contains(element.getText());
             if (!isPatternVariable && !isInPotentialVariables) {
@@ -31,7 +31,7 @@ public class SimpleRefalAnnotator implements Annotator {
             if (SimpleRefalUtils.egg(element)) {
                 TextRange range = new TextRange(element.getTextRange().getStartOffset(),
                         element.getTextRange().getEndOffset());
-                holder.createWarningAnnotation(range, "wa1 Was Here");
+                holder.createWarningAnnotation(range, "wa1 Waz HeЯe");
             }
 
         }
