@@ -20,11 +20,11 @@
     <annotator language="Simple Refal"
                        implementationClass="ru.barashko.simplerefalplugin.SimpleRefalAnnotator"/>
     <lang.commenter language="Simple Refal" implementationClass="ru.barashko.simplerefalplugin.SimpleRefalCommenter"/>
-    <codeStyleSettingsProvider implementation="ru.barashko.simplerefalplugin.SimpleRefalCodeStyleSettingsProvider"/>
+    <!-- <codeStyleSettingsProvider implementation="ru.barashko.simplerefalplugin.SimpleRefalCodeStyleSettingsProvider"/>
     <langCodeStyleSettingsProvider
             implementation="ru.barashko.simplerefalplugin.SimpleRefalLanguageCodeStyleSettingsProvider"/>
     <lang.formatter language="Simple Refal"
-                    implementationClass="ru.barashko.simplerefalplugin.SimpleRefalFormattingModelBuilder"/>
+                    implementationClass="ru.barashko.simplerefalplugin.SimpleRefalFormattingModelBuilder"/> -->
   </extensions>
 
   <actions>
