@@ -1,1 +1,1 @@
-# simple-refal-plugin
+# Simple Refal plugin for IntelliJ IDEA
