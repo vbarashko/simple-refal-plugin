@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a938a150-c475-4542-89ae-37727a780c0a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalAnnotator.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalAnnotator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalCompletionContributor$1.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalCompletionContributor$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalCompletionContributor$2.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalCompletionContributor$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalCompletionContributor.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefalCompletionContributor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/parser/SimpleRefalParser.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/parser/SimpleRefalParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalSentence.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalSentence.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalTypes$Factory.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalTypes$Factory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalTypes.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalTypes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalVisitor.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/SimpleRefalVisitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalSentenceImpl.class" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalSentenceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefal.bnf" afterPath="$PROJECT_DIR$/out/production/simple-refal-plugin/ru/barashko/simplerefalplugin/SimpleRefal.bnf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.bnf" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.bnf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalAnnotator.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalAnnotator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalCompletionContributor.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalCompletionContributor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalBraceMatcher.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalBraceMatcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalColorSettingsPage.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalColorSettingsPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.java" afterPath="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.java" />
     </list>
     <ignored path="simple-refal-plugin.iws" />
@@ -42,47 +30,96 @@
       <file leaf-file-name="SimpleRefalUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="168" column="66" selection-start-line="168" selection-start-column="66" selection-end-line="168" selection-end-column="66" />
+            <state relative-caret-position="1314">
+              <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6725#6726#0" expanded="true" />
-                <element signature="e#6800#6801#0" expanded="true" />
+                <element signature="e#8923#8924#0" expanded="true" />
+                <element signature="e#8998#8999#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleRefalAnnotator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalAnnotator.java">
+      <file leaf-file-name="SimpleRefalBlock.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalBlock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-366">
-              <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+            <state relative-caret-position="570">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1291#1292#0" expanded="true" />
+                <element signature="e#1355#1356#0" expanded="true" />
+                <element signature="e#1578#1579#0" expanded="true" />
+                <element signature="e#1635#1636#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleRefal.bnf" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.bnf">
+      <file leaf-file-name="Indent.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/formatting/Indent.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="300">
+              <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
               <folding>
-                <element signature="e#0#530#0" expanded="true" />
+                <element signature="e#2569#2570#0" expanded="true" />
+                <element signature="e#2622#2623#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleRefalParserDefinition.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalParserDefinition.java">
+      <file leaf-file-name="SimpleRefalFormattingModelBuilder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalFormattingModelBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            <state relative-caret-position="354">
+              <caret line="22" column="52" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1397#1398#0" expanded="true" />
+                <element signature="e#1424#1425#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleRefalLanguageCodeStyleSettingsProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalLanguageCodeStyleSettingsProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="610">
+              <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2080#2081#0" expanded="true" />
+                <element signature="e#2126#2127#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleRefalCodeStyleSettingsProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalCodeStyleSettingsProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#534#535#0" expanded="true" />
+                <element signature="e#571#572#0" expanded="true" />
+                <element signature="e#1093#1094#0" expanded="true" />
+                <element signature="e#1136#1137#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,11 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/simpleplugin/SimpleLanguage.java" />
-        <option value="$PROJECT_DIR$/src/com/simpleplugin/RefalLanguage.java" />
-        <option value="$PROJECT_DIR$/src/com/simpleplugin/SimpleIcons.java" />
-        <option value="$PROJECT_DIR$/src/com/simpleplugin/SimpleFileType.java" />
-        <option value="$PROJECT_DIR$/src/com/simpleplugin/SimpleRefalFileType.java" />
         <option value="$PROJECT_DIR$/src/com/simpleplugin/SimpleFileTypeFactory.java" />
         <option value="$PROJECT_DIR$/src/com/simplerefalplugin/SimpleRefalFileTypeFactory.java" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simple_refal_plugin/SimpleRefalIcons.java" />
@@ -143,22 +175,27 @@
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/test.cpp" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalPsiImplUtil.java" />
         <option value="$PROJECT_DIR$/gen/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalPsiImplUtil.java" />
-        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalBraceMatcher.java" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalParserDefinition.java" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalTokenType.java" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.flex" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalIcons.java" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalSyntaxHighlighter.java" />
-        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalColorSettingsPage.java" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefaCommenter.java" />
-        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalCommenter.java" />
         <option value="$PROJECT_DIR$/gen/ru/barashko/simplerefalplugin/parser/SimpleRefalParser.java" />
         <option value="/SimpleRefal.bnf.preview" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalCompletionContributor.java" />
-        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.java" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalAnnotator.java" />
         <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.bnf" />
+        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalBraceMatcher.java" />
+        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalCodeStyleSettings.java" />
+        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleCodeStyleSettingsProvider.java" />
+        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.java" />
+        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalColorSettingsPage.java" />
+        <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalFormattingModelBuilder.java" />
+        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalBlock.java" />
+        <option value="$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalLanguageCodeStyleSettingsProvider.java" />
       </list>
     </option>
   </component>
@@ -199,8 +236,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -229,6 +264,64 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simplerefalplugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simple-refal-plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simple-refal-plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simplerefalplugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="psi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simple-refal-plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simple-refal-plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simple-refal-plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simple-refal-plugin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="gen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -239,6 +332,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -504,7 +599,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -514,10 +609,10 @@
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2248062" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2248062" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5834553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23792094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -580,63 +675,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/colors/TextAttributesKey.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="114" column="59" selection-start-line="114" selection-start-column="36" selection-end-line="114" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/editor/DefaultLanguageHighlighterColors.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="37" column="56" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/util.jar!/com/intellij/openapi/util/UserDataHolder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/psi/PsiElement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3904">
-          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/ru/barashko/simplerefalplugin/psi/impl/SimpleRefalVariableImpl.java" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/codeInsight/completion/CompletionContributor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="41" column="153" selection-start-line="41" selection-start-column="113" selection-end-line="41" selection-end-column="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/codeInsight/completion/CompletionParameters.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/codeInsight/completion/CompletionType.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/com/intellij/compiler/classFilesIndex/chainsSearch/completion/lookup/ChainCompletionMethodCallLookupElement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-659">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/codeInsight/lookup/LookupElement.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -778,13 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalColorSettingsPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/openapi/fileTypes/SyntaxHighlighterBase.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1729">
@@ -841,31 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalLexerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalSyntaxHighlighter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="52" column="5" selection-start-line="46" selection-start-column="4" selection-end-line="52" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalFileType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -873,17 +879,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalBraceMatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="28" column="79" selection-start-line="28" selection-start-column="79" selection-end-line="28" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gen/ru/barashko/simplerefalplugin/parser/SimpleRefalParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.flex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="957">
+          <caret line="65" column="45" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/psi/codeStyle/CustomCodeStyleSettings.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -895,17 +909,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.flex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="65" column="45" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalCompletionContributor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="198">
           <caret line="23" column="129" selection-start-line="23" selection-start-column="129" selection-end-line="23" selection-end-column="129" />
           <folding />
         </state>
@@ -913,32 +919,173 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalAnnotator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-366">
+        <state relative-caret-position="18">
           <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
           <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalLexerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding>
+            <element signature="e#162#163#0" expanded="false" />
+            <element signature="e#211#212#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/psi/codeStyle/CodeStyleSettingsCustomizable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalSyntaxHighlighter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="22" column="71" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.bnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#530#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalBraceMatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+          <folding>
+            <element signature="e#1468#1469#0" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
+            <element signature="e#1804#1805#0" expanded="true" />
+            <element signature="e#1845#1846#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalCodeStyleSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="73" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="73" />
+          <folding>
+            <element signature="e#222#223#0" expanded="true" />
+            <element signature="e#285#286#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalColorSettingsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#1574#1575#0" expanded="true" />
+            <element signature="e#1620#1621#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalCodeStyleSettingsProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1136#1137#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/psi/SimpleRefalUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="168" column="66" selection-start-line="168" selection-start-column="66" selection-end-line="168" selection-end-column="66" />
+        <state relative-caret-position="1314">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6725#6726#0" expanded="true" />
-            <element signature="e#6800#6801#0" expanded="true" />
+            <element signature="e#8923#8924#0" expanded="true" />
+            <element signature="e#8998#8999#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefal.bnf">
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        <state relative-caret-position="313">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/psi/codeStyle/CodeStyleSettings.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5238">
+          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/openapi.jar!/com/intellij/formatting/Indent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
           <folding>
-            <element signature="e#0#530#0" expanded="true" />
+            <element signature="e#2569#2570#0" expanded="true" />
+            <element signature="e#2622#2623#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
+            <element signature="e#1578#1579#0" expanded="true" />
+            <element signature="e#1635#1636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalLanguageCodeStyleSettingsProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2080#2081#0" expanded="true" />
+            <element signature="e#2126#2127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/barashko/simplerefalplugin/SimpleRefalFormattingModelBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="22" column="52" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1397#1398#0" expanded="true" />
+            <element signature="e#1424#1425#0" expanded="true" />
           </folding>
         </state>
       </provider>
