@@ -1,7 +1,7 @@
-<idea-plugin version="1">
+<idea-plugin version="1.1">
   <id>ru.barashko.simplerefalplugin</id>
   <name>Simple Refal Plugin</name>
-  <version>1.0</version>
+  <version>1.1</version>
   <description>
     Supports the development Simple Refal applications with Intellij IDEA.
   </description>
