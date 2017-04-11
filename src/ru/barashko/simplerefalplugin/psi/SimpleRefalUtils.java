@@ -1,6 +1,8 @@
 package ru.barashko.simplerefalplugin.psi;
 
+import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
+import org.jetbrains.annotations.Contract;
 
 import java.util.*;
 
@@ -152,14 +154,24 @@ public class SimpleRefalUtils {
     public static boolean egg(PsiElement element) {
         String name = element.getText();
         Set<String> ELEMENTS = new HashSet<>();
-        ELEMENTS.add("vovan");
-        ELEMENTS.add("vavan");
-        ELEMENTS.add("wavan");
-        ELEMENTS.add("wa1");
-        return ELEMENTS.contains(name.substring(2));
+        ELEMENTS.add("\u0076\u006f\u0076\u0061\u006e");
+        ELEMENTS.add("\u0076\u0061\u0076\u0061\u006e");
+        ELEMENTS.add("\u0077\u0061\u0076\u0061\u006e");
+        ELEMENTS.add("\u0077\u0061\u0031");
+        return ELEMENTS.contains(name.substring(2).toLowerCase());
     }
 
-    private static boolean isSentence(PsiElement element) {
+    public static boolean isSentence(PsiElement element) {
         return element.toString().equals("SimpleRefalSentenceImpl(SENTENCE)");
+    }
+
+    public static boolean isVar(PsiElement element) {
+        return element.toString().equals("SimpleRefalVarImpl(VAR)");
+    }
+
+    @Contract("_ -> !null")
+    public static TextRange getTextRange(PsiElement element) {
+        return new TextRange(element.getTextRange().getStartOffset(),
+                element.getTextRange().getEndOffset());
     }
 }

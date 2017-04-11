@@ -23,8 +23,6 @@ public class SimpleRefalCompletionContributor extends CompletionContributor {
                         String[] siblingPatternVariables = SimpleRefalUtils.getSiblingPatternVariables(parameters.getPosition().getParent());
                         String[] potentials = (String[]) ArrayUtils.addAll(predecessorPatternVariables, siblingPatternVariables);
 
-                        System.out.println(Arrays.toString(potentials));
-
                         if (potentials.length > 0) {
                             for (String var : potentials) {
                                 resultSet.addElement(LookupElementBuilder.create(var));

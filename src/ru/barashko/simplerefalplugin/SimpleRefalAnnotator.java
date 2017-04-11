@@ -1,7 +1,6 @@
 package ru.barashko.simplerefalplugin;
 
 import com.intellij.lang.annotation.*;
-import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.*;
 import org.jetbrains.annotations.NotNull;
 import ru.barashko.simplerefalplugin.psi.SimpleRefalUtils;
@@ -11,27 +10,23 @@ import java.util.Arrays;
 public class SimpleRefalAnnotator implements Annotator {
     @Override
     public void annotate(@NotNull final PsiElement element, @NotNull AnnotationHolder holder) {
-        if (element.toString().equals("SimpleRefalVarImpl(VAR)")) {
+        if (SimpleRefalUtils.isVar(element)) {
             String[] potentialVariables = SimpleRefalUtils.getPredecessorPatternVariables(element, false);
             boolean isPatternVariable = SimpleRefalUtils.isPatternVariable(element);
             boolean isInPotentialVariables = Arrays.asList(potentialVariables).contains(element.getText());
             if (!isPatternVariable && !isInPotentialVariables) {
-                TextRange range = new TextRange(element.getTextRange().getStartOffset(),
-                        element.getTextRange().getEndOffset());
-                holder.createErrorAnnotation(range, "Unresolved variable");
+                holder.createErrorAnnotation(SimpleRefalUtils.getTextRange(element), "Unresolved variable");
             }
             if (isPatternVariable && isInPotentialVariables) {
                 boolean isRedefinitionVariable = SimpleRefalUtils.isRedefinitonVariable(element);
                 if (!isRedefinitionVariable) {
-                    TextRange range = new TextRange(element.getTextRange().getStartOffset(),
-                            element.getTextRange().getEndOffset());
-                    holder.createWeakWarningAnnotation(range, "Variable is already defined");
+                    holder.createWeakWarningAnnotation(SimpleRefalUtils.getTextRange(element),
+                            "Variable is already defined");
                 }
             }
             if (SimpleRefalUtils.egg(element)) {
-                TextRange range = new TextRange(element.getTextRange().getStartOffset(),
-                        element.getTextRange().getEndOffset());
-                holder.createWarningAnnotation(range, "wa1 Waz HeЯe");
+                holder.createWarningAnnotation(SimpleRefalUtils.getTextRange(element),
+                        "\u0077\u0061\u0031\u0020\u0057\u0061\u007a\u0020\u0048\u0065\u042f\u0065");
             }
 
         }
@@ -42,10 +37,14 @@ public class SimpleRefalAnnotator implements Annotator {
                 String[] functionNames = SimpleRefalUtils.getAvailableFunctionNames(element);
 
                 if (!Arrays.asList(functionNames).contains(element.getText())) {
-                    TextRange range = new TextRange(element.getTextRange().getStartOffset(),
-                            element.getTextRange().getEndOffset());
-                    holder.createErrorAnnotation(range, "Unresolved function");
+                    holder.createErrorAnnotation(SimpleRefalUtils.getTextRange(element), "Unresolved function");
                 }
+            }
+        }
+
+        if (SimpleRefalUtils.isSentence(element)) {
+            if (element.getChildren().length < 2) {
+                holder.createErrorAnnotation(SimpleRefalUtils.getTextRange(element), "No right hand side");
             }
         }
     }

@@ -29,13 +29,18 @@ enumDefinition ::= (ENUM | EENUM) nameList {pin=1}
 swapDefinition ::= (SWAP | ESWAP) nameList {pin=1}
 functionDefinition ::= ENTRY? functionName block {pin=2}
 block ::= LBRACE sentence* RBRACE {pin=1}
-sentence ::= pattern EQUAL result SEMICOLON {pin=2}
+sentence ::= sentenceCorrect | sentenceRecover
+private sentenceCorrect ::= pattern EQUAL result SEMICOLON {pin=2}
+private sentenceRecover ::= patternRecover
 pattern ::= patternTerm*
+patternRecover ::= patternTerm+
 result ::= resultTerm*
 patternTerm ::= redefinitionVariable
                 | commonTerm
-                | LPAREN pattern RPAREN
-                | LBRACKET NAME pattern RPAREN
+                | patternTermParens
+                | patternTermBrackets
+private patternTermParens ::= LPAREN pattern RPAREN {pin=2}
+private patternTermBrackets ::= LBRACKET NAME pattern RPAREN {pin=3}
 resultTerm ::= commonTerm
                 | parenResultTerm
                 | bracketResultTerm
@@ -49,10 +54,10 @@ commonTerm ::= var
                 | identifier
                 | QUOTEDSTRING
                 | INTEGER_LITERAL
-identifier ::= SHARP NAME
+identifier ::= SHARP NAME {pin=1}
 redefinitionVariable ::= var CARET
-functionName ::= NAME
-var ::= VARIABLE
+functionName ::= NAME {pin=1}
+var ::= VARIABLE {pin=1}
 forwardDecration ::= FORWARD nameList
 identifierDefinition ::= LABEL nameList
 nameList ::= NAME (COMMA NAME)* SEMICOLON
