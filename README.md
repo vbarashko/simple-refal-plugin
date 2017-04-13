@@ -21,8 +21,8 @@ Import [simple-refal-plugin.jar](https://github.com/vlbar/simple-refal-plugin/bl
 2. Set up intellij for plugin development http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started.html
 3. Install grammar kit plugin
 4. DO NOT Install jflex plugin.  The grammar kit plugin is sufficient.
-5. "Generate parser code" by right clicking on the Pig.bnf file
-6. "Run jflex generator" by right clicking on the Pig.flex file
+5. "Generate parser code" by right clicking on the SimpleRefal.bnf file
+6. "Run jflex generator" by right clicking on the SimpleRefal.flex file
 7. Go through the Intellij tutorial if you get stuck (http://www.jetbrains.org/intellij/sdk/docs/tutorials/custom_language_support_tutorial.html)
 
 
